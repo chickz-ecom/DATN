@@ -53,5 +53,12 @@ Route::prefix('account')->group(function(){
     Route::get("register",[AccountController::class, 'register']);
     Route::post("register",[AccountController::class, 'postRegister']);
 
+    Route::prefix('my-order')->middleware('CheckMemberLogin')->group(function(){
+        Route::get('/', [AccountController::class, 'myOrderIndex']);
+        Route::get('/{id}', [AccountController::class, 'myOrderShow']);
+    });
+    Route::get('manage', [AccountController::class, 'manageAccount'])->middleware('CheckMemberLogin');
+
 });
+
 

@@ -54,10 +54,15 @@
 
                 <div class="ht-right">
                     @if (Auth::check())
-                    <a href="./account/logout" class="login-panel">
+                    <div class="login-panel manage-account">
                         <i class="fa fa-user"></i>
-                        {{ Auth::user()->first_name }} - Logout
-                    </a>
+                        {{ Auth::user()->first_name }}
+                        <ul class="dropdown1">
+                            <li><a href="./account/manage">Quản lý tài khoản</a></li>
+                            <li><a href="./account/chang-password">Đổi mật khẩu</a></li>
+                            <li><a href="./account/logout">Đăng xuất</a></li>
+                        </ul>
+                    </div>
                     @else
                         <a href="./account/login" class="login-panel">
                             <i class="fa fa-user"></i>
@@ -192,6 +197,7 @@
                         <li class="{{ (request()->segment(1)=='contact') ? 'active' : '' }}"><a href="./contact">Contact</a></li>
                         <li><a href="">Pages</a>
                             <ul class="dropdown">
+                                <li><a href="./account/my-order">My Order</a></li>
                                 <li><a href="blog-details.html">Blog Details</a></li>
                                 <li><a href="./cart">Shopping Cart</a></li>
                                 <li><a href="./checkout">Checkout</a></li>

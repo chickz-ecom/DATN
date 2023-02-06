@@ -8,6 +8,7 @@ use App\Models\OrderDetail;
 use App\Utilities\VNPay;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 class CheckOutController extends Controller
@@ -22,7 +23,9 @@ class CheckOutController extends Controller
     }
     public function addOrder(Request $request){
         // Them don hang
-        $order = Order::create($request->all());
+        $dataOrder = $request->all();
+        $dataOrder['user_id'] = auth()->user()->id ?? 0;
+        $order = Order::create($dataOrder);
         // Them chi tiet don hang
         $carts = Cart::content();
         if($request->payment_type == 'pay_later'){ 

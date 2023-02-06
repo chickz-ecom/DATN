@@ -776,7 +776,27 @@ ol {
 	visibility: visible;
 	top: 52px;
 }
-
+.manage-account:hover .dropdown1{
+	opacity: 1;
+	visibility: visible;
+	top: 52px;
+}
+.dropdown1{
+	position: absolute;
+	right: 0;
+	top: 82px;
+	width: 200px;
+	z-index: 99;
+	background: #252525;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.dropdown1 li{
+	padding: 10px 10px;
+}
 .nav-item .nav-menu li .dropdown {
 	position: absolute;
 	right: 0;
@@ -2683,13 +2703,15 @@ ol {
 	text-align: center;
 	padding-bottom: 34px;
 }
-
+.zoomImg:hover{
+	transform: scale(1.5);
+}
 .cart-table table tr td.first-row {
 	padding-top: 30px;
 }
 
 .cart-table table tr td.cart-pic {
-	width: 21%;
+	/* width: 21%; */
 }
 
 .cart-table table tr td.cart-title {

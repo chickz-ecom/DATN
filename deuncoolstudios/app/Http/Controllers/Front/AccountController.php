@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Request\RegisterRequest;
+use App\Models\Order;
+use App\Models\OrderDetail;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -24,7 +26,7 @@ class AccountController extends Controller
         $remember = $request->remember;
 
         if(Auth::attempt($credentials, $remember)){
-            return redirect('/');
+            return redirect()->intended();
         }
         else{
             return back()->with('notification', 'Tài khoản hoặc mật khẩu không chính xác');
@@ -45,5 +47,19 @@ class AccountController extends Controller
         if($user){
             return redirect('account/login')->with('notification', 'Tạo thành công tài khoản');
         }
+    }
+    public function myOrderIndex(){
+        $orders = Order::where('user_id', Auth::id())->get();
+        return view('front.account.my-order.index', compact('orders'));
+    }
+    public function myOrderShow($id){
+        $order = Order::where('id', $id)->firstOrFail();
+        // dd($order);
+        return view('front.account.my-order.show', compact('order'));
+    }
+    public function manageAccount(){
+        $user = User::where('id', auth()->user()->id)->firstOrFail();
+        dd($user);
+        return view('front.account.manage', compact('user'));
     }
 }
