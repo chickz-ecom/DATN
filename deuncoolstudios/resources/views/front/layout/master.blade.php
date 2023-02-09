@@ -55,7 +55,7 @@
                 <div class="ht-right">
                     @if (Auth::check())
                     <div class="login-panel manage-account">
-                        <i class="fa fa-user"></i>
+                        <img src="front/img/user/avatar-1.png" alt="" class="avatar-account">
                         {{ Auth::user()->first_name }}
                         <ul class="dropdown1">
                             <li><a href="./account/manage">Quản lý tài khoản</a></li>
@@ -64,22 +64,13 @@
                         </ul>
                     </div>
                     @else
-                        <a href="./account/login" class="login-panel">
-                            <i class="fa fa-user"></i>
-                            Login
-                        </a>
+                        <div class="login-panel manage-account">
+                            <img src="front/img/user/default.jpg" alt="" class="avatar-account">
+                            <a href="./account/login" class="btn">
+                                Login
+                            </a>
+                        </div>
                     @endif
-                    <div class="lan-selector">
-                        <select class="language_drop" name="countries" id="countries" style="width: 300px;">
-                            <option value="yt" data-image="front/img/flag-1.jpg" data-imagecss="flag yt" data-title="English">
-                                English
-                            </option>
-                            <option value="yu" data-image="front/img/flag-2.jpg" data-imagecss="flag yu"
-                                data-title="Bangladesh">
-                                German
-                            </option>
-                        </select>
-                    </div>
                     <div class="top-social">
                         <a href="#"><i class="ti-facebook"></i></a>
                         <a href="#"><i class="ti-twitter-alt"></i></a>

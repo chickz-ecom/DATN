@@ -35,7 +35,11 @@
                                 <h6 class="alert alert-warning" role="alert">
                                     {{ session('notification') }}
                                 </h6>
-                                
+                            @endif
+                            @if (session('success'))
+                            <h6 class="alert alert-success" role="alert">
+                                {{ session('success') }}
+                            </h6>
                             @endif
                             <form action="" method="post">
                                 @csrf

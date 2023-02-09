@@ -377,16 +377,22 @@ ol {
 }
 
 .header-top .ht-right .login-panel {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	position: relative;
 	float: right;
 	font-size: 14px;
 	color: #252525;
-	display: inline-block;
 	padding-left: 20px;
-	border-left: 1px solid #e5e5e5;
-	padding-top: 18px;
-	padding-bottom: 15px;
+    padding-top: 9px;
+    padding-bottom: 6px;
 }
-
+.header-top .ht-right .login-panel img{
+	width: 30px;
+	height: auto;
+	margin-right: 5px;
+}
 .header-top .ht-right .login-panel i {
 	margin-right: 8px;
 }
@@ -417,7 +423,7 @@ ol {
 }
 
 .inner-header .logo {
-	padding: 12px 0;
+	/* padding: 12px 0; */
 }
 
 .inner-header .logo a {

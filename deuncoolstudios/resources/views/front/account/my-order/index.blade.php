@@ -38,29 +38,28 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($orders as $order)
-                                        
-                                    @endforeach
-                                    <tr>
-                                        <td class="cart-pic first-row d-flex justify-content-center">
-                                            <img style="height:100px;" src="front/img/products/{{ $order->orderDetails[0]->product->productImages[0]->path }}" alt="">
-                                        </td>
-                                        <td class="first-row">
-                                            {{ $order->id }}
-                                        </td>
-                                        <td class=" first-row">
-                                            <h5>{{ $order->orderDetails[0]->product->name }} 
-                                                @if (count($order->orderDetails)>1)
-                                                    (and {{ count($order->orderDetails) }} other product) </h5> 
-                                                @endif
-                                        </td>
+                                        <tr>
+                                            <td class="cart-pic first-row d-flex justify-content-center">
+                                                <img style="height:100px;" src="front/img/products/{{ $order->orderDetails[0]->product->productImages[0]->path }}" alt="">
+                                            </td>
+                                            <td class="first-row">
+                                                {{ $order->id }}
+                                            </td>
+                                            <td class=" first-row">
+                                                <h5>{{ $order->orderDetails[0]->product->name }} 
+                                                    @if (count($order->orderDetails)>1)
+                                                        (and {{ count($order->orderDetails) }} other product) </h5> 
+                                                    @endif
+                                            </td>
 
-                                        <td class="total-price first-row">
-                                            {{ array_sum(array_column($order->orderDetails->toArray(), 'total')) }}đ
-                                        </td>
-                                        <td class="first-row">
-                                            <a href="./account/my-order/{{ $order->id }}" class="btn">Details</a>
-                                        </td>
-                                    </tr>
+                                            <td class="total-price first-row">
+                                                {{ array_sum(array_column($order->orderDetails->toArray(), 'total')) }}đ
+                                            </td>
+                                            <td class="first-row">
+                                                <a href="./account/my-order/{{ $order->id }}" class="btn">Details</a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

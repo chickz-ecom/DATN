@@ -24,7 +24,7 @@ class ShopController extends Controller
 
         $brands = Brand::all();
 
-        $perPage = $request->show ?? 3;
+        $perPage = $request->show ?? 9;
         $sortBy = $request->sort_by ?? 'latest';
         $search = $request->search ?? '';
 

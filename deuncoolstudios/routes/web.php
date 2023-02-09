@@ -1,14 +1,22 @@
 <?php
 
+use App\Http\Controllers\Admin\BrandController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use App\Http\Controllers\Front\AccountController;
 use App\Http\Controllers\Front\CartController;
 use App\Http\Controllers\Front\CheckOutController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\ShopController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\HomeController as AdminHomeController;
+use App\Http\Controllers\Admin\ProductCategoryController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Models\Brand;
 use App\Models\User;
 use App\Repositories\Product\ProductRepositoryInterface;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +28,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+    #Client 
 Route::get('/', [HomeController::class, 'index']);
 // 
 Route::prefix('/shop')->group(function(){
@@ -50,6 +58,7 @@ Route::prefix('account')->group(function(){
     Route::get("login",[AccountController::class, 'login']);
     Route::post("login",[AccountController::class, 'checkLogin']);
     Route::get("logout",[AccountController::class, 'logout']);
+    Route::get("active/{user}/{token}",[AccountController::class, 'activeAccount'])->name('activeAccount');
     Route::get("register",[AccountController::class, 'register']);
     Route::post("register",[AccountController::class, 'postRegister']);
 
@@ -60,5 +69,17 @@ Route::prefix('account')->group(function(){
     Route::get('manage', [AccountController::class, 'manageAccount'])->middleware('CheckMemberLogin');
 
 });
-
+    # Dashbroad
+Route::prefix('admin')->middleware('CheckAdminLogin')->group(function(){
+    Route::redirect('', 'admin/user', 301);
+    Route::resource('user', UserController::class);
+    Route::resource('category', ProductCategoryController::class);
+    Route::resource('brand', BrandController::class);
+    Route::resource('product', ProductController::class);
+    Route:: prefix('login')->group(function(){
+        Route::get('/', [AdminHomeController::class, 'getLogin'])->withoutMiddleware('CheckAdminLogin');
+        Route::post('/', [AdminHomeController::class, 'postLogin'])->withoutMiddleware('CheckAdminLogin');
+    });
+    Route::get('logout', [AdminHomeController::class, 'logout']);
+});
 
