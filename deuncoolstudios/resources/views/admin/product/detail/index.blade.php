@@ -1,6 +1,7 @@
 @extends('admin.layout.master')
-@section('title', 'Category')
+@section('title', 'Product Detail')
 @section('body')
+
 
                 <!-- Main -->
                 <div class="app-main__inner">
@@ -11,7 +12,7 @@
                                     <i class="pe-7s-ticket icon-gradient bg-mean-fruit"></i>
                                 </div>
                                 <div>
-                                    Category
+                                    Product Detail
                                     <div class="page-title-subheading">
                                         View, create, update, delete and manage.
                                     </div>
@@ -19,7 +20,7 @@
                             </div>
 
                             <div class="page-title-actions">
-                                <a href="./admin/category/create" class="btn-shadow btn-hover-shine mr-3 btn btn-primary">
+                                <a href="./admin/product/{{$product->id}}/detail/create" class="btn-shadow btn-hover-shine mr-3 btn btn-primary">
                                     <span class="btn-icon-wrapper pr-2 opacity-7">
                                         <i class="fa fa-plus fa-w-20"></i>
                                     </span>
@@ -32,53 +33,34 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="main-card mb-3 card">
-
-                                <div class="card-header">
-
-                                    <form>
-                                        <div class="input-group">
-                                            <input type="search" name="search" id="search" value="{{request('search')}}"
-                                                placeholder="Search everything" class="form-control">
-                                            <span class="input-group-append">
-                                                <button type="submit" class="btn btn-primary">
-                                                    <i class="fa fa-search"></i>&nbsp;
-                                                    Search
-                                                </button>
-                                            </span>
-                                        </div>
-                                    </form>
-                                </div>
-
                                 <div class="table-responsive">
                                     <table class="align-middle mb-0 table table-borderless table-striped table-hover">
                                         <thead>
                                             <tr class="header-table">
-                                                <th class="text-center">ID</th>
-                                                <th>Name</th>
+                                                <th class="pl-4">Product Name</th>
+                                                <th>Color</th>
+                                                <th>Size</th>
+                                                <th>Qty</th>
                                                 <th class="text-center">Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($productCategories as $item)
+                                            @foreach ($product->productDetails as $detail)
                                                 <tr>
-                                                    <td class="text-center text-muted"># {{$item->id}} </td>
-                                                    <td>
-                                                        <div class="widget-content p-0">
-                                                            <div class="widget-content-wrapper">
-                                                                <div class="widget-content-left flex2">
-                                                                    <div class="widget-heading">{{$item->name}}</div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
+                                                    <td class="pl-4 text-muted">{{$product->name}}</td>
+
+                                                    <td class="">{{$detail->color}}</td>
+                                                    <td class="">{{$detail->size}}</td>
+                                                    <td class="">{{$detail->qty}}</td>
+                                                    
                                                     <td class="text-center">
-                                                        <a href="./admin/category/{{$item->id}}/edit" data-toggle="tooltip" title="Edit"
+                                                        <a href="./admin/product/{{$product->id}}/detail/{{$detail->id}}/edit" data-toggle="tooltip" title="Edit"
                                                             data-placement="bottom" class="btn btn-outline-warning border-0 btn-sm">
                                                             <span class="btn-icon-wrapper opacity-8">
                                                                 <i class="fa fa-edit fa-w-20"></i>
                                                             </span>
                                                         </a>
-                                                        <form class="d-inline" action="./admin/category/{{$item->id}}" method="post">
+                                                        <form class="d-inline" action="admin/product/{{$product->id}}/detail/{{$detail->id}}" method="post">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button class="btn btn-hover-shine btn-outline-danger border-0 btn-sm"
@@ -98,9 +80,6 @@
                                         </tbody>
                                     </table>
                                 </div>
-
-                                {{ $productCategories->links() }}
-
                             </div>
                         </div>
                     </div>

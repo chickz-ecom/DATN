@@ -4,11 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
-use App\Models\ProductImage;
-use App\Utilities\Common;
+use App\Models\ProductDetail;
 use Illuminate\Http\Request;
 
-class ProductImageController extends Controller
+class ProductDetailController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +17,8 @@ class ProductImageController extends Controller
     public function index($id)
     {
         //
-        $product = Product::where('id',$id)->firstOrFail();
-        return view('admin.product.image.index', compact('product'));
+        $product = Product::where('id', $id)->firstOrFail();
+        return view('admin.product.detail.index', compact('product'));
     }
 
     /**
@@ -27,9 +26,11 @@ class ProductImageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
         //
+        $product = Product::where('id', $id)->firstOrFail();
+        return view('admin.product.detail.create',compact('product'));
     }
 
     /**
@@ -38,16 +39,12 @@ class ProductImageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $product_id)
+    public function store(Request $request, $id)
     {
         //
         $data = $request->all();
-        if($request->hasFile('image')){
-            $data['path'] = Common::uploadFile($request->file('image'), 'front/img/products');
-            unset($data['image']);
-            ProductImage::create($data);
-        }
-        return redirect('admin/product/' . $product_id . '/image');
+        ProductDetail::create($data);
+        return redirect('admin/product/' . $id . '/detail');
     }
 
     /**
@@ -67,9 +64,12 @@ class ProductImageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($product_id, $product_detail)
     {
         //
+        $product = Product::where('id', $product_id)->firstOrFail();
+        $detail = ProductDetail::where('id',$product_detail)->firstOrFail();
+        return view('admin.product.detail.edit', compact('product', 'detail'));
     }
 
     /**
@@ -79,9 +79,13 @@ class ProductImageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $product, $detail)
     {
         //
+        $data = $request->all();
+        $detail = ProductDetail::where('id', $detail)->firstOrFail();
+        $detail->update($data);
+        return redirect('admin/product/' . $product . '/detail');
     }
 
     /**
@@ -90,15 +94,10 @@ class ProductImageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($product_id, $product_image_id)
+    public function destroy($product, $detail)
     {
         //
-        $file_name = ProductImage::find($product_image_id)->path;
-        if($file_name!=null){
-            unlink('front/img/products/' . $file_name);
-        }
-
-        ProductImage::find($product_image_id)->delete();
-        return redirect('admin/product/' . $product_id . '/image');
+        ProductDetail::find($detail)->delete();
+        return redirect('admin/product/' . $product . '/detail');
     }
 }

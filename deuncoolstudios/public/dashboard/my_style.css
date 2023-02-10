@@ -7,7 +7,10 @@ img {
 .modal-dialog {
     box-shadow: none;
 }
-
+.header-table{
+    background: linear-gradient(45deg, red, blue);
+    color: #fff;
+}
 ul {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;

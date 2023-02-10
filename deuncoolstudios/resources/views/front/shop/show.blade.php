@@ -31,7 +31,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="product-pic-zoom">
-                                <img src="front/img/products/{{ $product->productImages[0]->path }}" class="product-big-img" alt="">
+                                <img src="front/img/products/{{ $product->productImages[0]->path ?? '' }}" class="product-big-img" alt="">
                                 <div class="zoom-icon">
                                     <i class="fa fa-search-plus"></i>
                                 </div>
@@ -39,7 +39,7 @@
                             <div class="product-thumbs">
                                 <div class="product-thumbs-track ps-slider owl-carousel">
                                     @foreach ($product->productImages as $image)
-                                        <div class="pt active" data-imgbigurl="front/img/products/{{ $image->path }}">
+                                        <div class="pt active" data-imgbigurl="front/img/products/{{ $image->path ?? '' }}">
                                             <img src="front/img/products/{{ $image->path }}" alt="">
                                         </div>
                                     @endforeach
