@@ -24,10 +24,10 @@
     <div class="product-shop spad page-details">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-8 order-2 order-lg-1 product-sidebar-filter">
+                {{-- <div class="col-lg-3 col-md-6 col-sm-8 order-2 order-lg-1 product-sidebar-filter">
                     @include('front.shop.components.products-sidebar-filter')
-                </div>
-                <div class="col-lg-9 order-1 order-lg-2">
+                </div> --}}
+                <div class="col-lg-12 order-1 order-lg-2">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="product-pic-zoom">
@@ -69,9 +69,9 @@
                                         {{ $product->content }}
                                     </p>
                                     @if ($product->discount!=null)
-                                        <h4>{{ $product->discount }}<span>{{ $product->price }}</span></h4>
+                                        <h4>{{ $product->discount }}đ<span>{{ $product->price }}đ</span></h4>
                                     @else
-                                        <h4>{{ $product->price }}</h4>
+                                        <h4>{{ $product->price }}đ</h4>
                                     @endif
                                 </div>
                                 <div class="pd-color">
@@ -116,9 +116,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="product-tab">
+                    <div class="product-tab col-12">
                         <div class="tab-item">
-                            <ul class="nav" role="tablist">
+                            <ul class="nav justify-content-center" role="tablist" >
                                 <li><a href="#tab-1" class="active" data-toggle="tab" role="tab">DESCRIPTION</a></li>
                                 <li><a href="#tab-2" data-toggle="tab" role="tab">SPECIFICATIONS</a></li>
                                 <li><a href="#tab-3" data-toggle="tab" role="tab">Customer Review ({{ count($product->productComments) }})</a></li>
@@ -158,7 +158,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="p-price">
-                                                        {{ $product->price }}
+                                                        {{ $product->price }}đ
                                                     </div>
                                                 </td>
                                             </tr>
@@ -237,7 +237,7 @@
                                                         <span>(5)</span>
                                                     </div>
                                                     <h5>{{ $comment->name }}<span>{{ date('M d, Y', strtotime($comment->created_at)) }}</span></h5>
-                                                    <div class="at-reply">{{ $comment->message }}</div>
+                                                    <div class="at-reply">{{ $comment->messages }}</div>
                                                 </div>
                                             </div>
                                         @endforeach
@@ -249,18 +249,12 @@
                                             <input type="hidden" name="product_id" value="{{ $product->id }}" id="">
                                             <input type="hidden" name="user_id" value="{{ Auth::user()->id ?? null }}" id="">
                                             <div class="row">
-                                                <div class="col-lg-6">
-                                                    <input type="text" placeholder="Name" name="name">
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <input type="text" placeholder="Email" name="email">
-                                                </div>
                                                 <div class="col-lg-12">
                                                     <textarea name="messages" placeholder="Message" id="" cols="30" rows="10"></textarea>
                                                     <div class="personal-rating">
                                                         <h6>Your Rating</h6>
                                                         <div class="rate">
-                                                            <input type="radio" id="star5" name="rating" value="5" />
+                                                            <input type="radio" id="star5" name="rating" value="5" checked/>
                                                             <label for="star5" title="text">5 stars</label>
                                                             <input type="radio" id="star4" name="rating" value="4" />
                                                             <label for="star4" title="text">4 stars</label>

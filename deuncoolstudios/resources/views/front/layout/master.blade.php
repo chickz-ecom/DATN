@@ -114,34 +114,61 @@
                             <li class="cart-icon">
                                 <a href="./cart">
                                     <i class="icon_bag_alt"></i>
-                                    <span>{{ Cart::count() }}</span>
+                                    @if(auth()->user())
+                                        <span>{{count($carts)}}</span>
+                                    @else
+                                        <span>{{ Cart::count() }}</span>
+                                    @endif
                                 </a>
                                 <div class="cart-hover">
-                                    <div class="select-items">
+                                    <div class="select-items" style="overflow: scroll; max-height: 400px;">
                                         <table>
                                             <tbody>
-                                                @foreach (Cart::content() as $cart)
-                                                    <tr>
-                                                        <td class="si-pic">
-                                                            <img style="height:70px;" src="front/img/products/{{ $cart->options->images[0]->path }}" alt="">
-                                                        </td>
-                                                        <td class="si-text">
-                                                            <div class="product-selected">
-                                                                <p>{{ number_format($cart->price) }} x {{ $cart->qty }}</p>
-                                                                <h6>{{ $cart->name }}</h6>
-                                                            </div>
-                                                        </td>
-                                                        <td class="si-close">
-                                                            <i class="ti-close" onclick="window.location='./cart/delete/{{ $cart->rowId }}'"></i>
-                                                        </td>
-                                                    </tr>
-                                                @endforeach
+                                                @if (auth()->user())
+                                                    @foreach ($carts as $cart)
+                                                        <tr>
+                                                            <td class="si-pic">
+                                                                <img style="height:70px;" src="front/img/products/{{ $cart->image }}" alt="">
+                                                            </td>
+                                                            <td class="si-text">
+                                                                <div class="product-selected">
+                                                                    <p>{{ number_format($cart->price) }} x {{ $cart->qty }}đ</p>
+                                                                    <h6>{{ $cart->name }}</h6>
+                                                                </div>
+                                                            </td>
+                                                            <td class="si-close">
+                                                                <i class="ti-close" onclick="window.location='./cart/delete/{{ $cart->rowId }}'"></i>
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
+                                                @else
+                                                    @foreach (Cart::content() as $cart)
+                                                        <tr>
+                                                            <td class="si-pic">
+                                                                <img style="height:70px;" src="front/img/products/{{ $cart->options->images[0]->path }}" alt="">
+                                                            </td>
+                                                            <td class="si-text">
+                                                                <div class="product-selected">
+                                                                    <p>{{ number_format($cart->price) }} x {{ $cart->qty }}đ</p>
+                                                                    <h6>{{ $cart->name }}</h6>
+                                                                </div>
+                                                            </td>
+                                                            <td class="si-close">
+                                                                <i class="ti-close" onclick="window.location='./cart/delete/{{ $cart->rowId }}'"></i>
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
+                                                @endif
                                             </tbody>
                                         </table>
                                     </div>
                                     <div class="select-total">
                                         <span>total:</span>
-                                        <h5>{{ Cart::total() }}</h5>
+                                        @if (auth()->user())
+                                            <h5>{{$total}}đ</h5>
+                                        @else
+                                            <h5>{{ Cart::total() }}đ</h5>
+                                        @endif
                                     </div>
                                     <div class="select-button">
                                         <a href="./cart" class="primary-btn view-card">VIEW CART</a>

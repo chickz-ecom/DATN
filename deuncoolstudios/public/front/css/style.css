@@ -375,7 +375,9 @@ ol {
 .header-top .ht-right {
 	float: right;
 }
-
+.select-items::-webkit-scrollbar{
+	width: 2px;
+}
 .header-top .ht-right .login-panel {
 	display: flex;
     justify-content: center;

@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('town_city');
             $table->string('email');
             $table->string('phone');
+            $table->tinyInteger('status')->default(0);
             $table->string('payment_type');
             $table->timestamps();
         });

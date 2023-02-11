@@ -1,47 +1,27 @@
 <?php
 
-namespace App\Http\Controllers\Front;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Blog;
-use App\Models\Product;
-use App\Models\UserCart;
+use App\Models\Order;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-        $menProducts = Product::where('featured', true)->where('product_category_id',1)->get();
-        $womenProducts = Product::where('featured', true)->where('product_category_id',2)->get();
-        $blogs = Blog::orderbydesc('id')->limit(3)->get();
-        // 
-
-
-        if(auth()->user()){
-            $carts = UserCart::where('user_id', auth()->user()->id)->get();
-            // $total = array_sum(array_column($carts->user->toArray(), 'user_id'));
-            $totals = UserCart::select('total')->where('user_id', auth()->user()->id)->get();
-            $total = 0;
-            foreach($totals as $item){
-                $total += $item->total;
-            }
-
-            return view('front/index', compact('carts','total', 'menProducts', 'womenProducts', 'blogs'));
-
+        $orders = Order::orderby('id')->paginate(20);
+        $search = $request->search ?? '';
+        if($search!=null){
+            $orders = Order::where('first_name', 'like', "%" . $search . "%")->orderby('id')->paginate(20);
         }
-        return view('front/index', 
-            [
-                'menProducts'=>$menProducts,
-                'womenProducts'=>$womenProducts,
-                'blogs'=>$blogs
-            ]);
+        return view('admin.order.index',compact('orders'));
     }
 
     /**
@@ -74,6 +54,8 @@ class HomeController extends Controller
     public function show($id)
     {
         //
+        $order = Order::where('id', $id)->firstOrFail();
+        return view('admin.order.show', compact('order'));
     }
 
     /**
@@ -97,6 +79,16 @@ class HomeController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $order = Order::find($id);
+        if($order->status==0){
+            $order->status = 1;
+        }
+        else if($order->status==1){
+            $order->status = 0;
+        }
+        $order->save();
+        return redirect('admin/order');
+
     }
 
     /**

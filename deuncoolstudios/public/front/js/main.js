@@ -250,8 +250,11 @@
 
         //update cart
 
-        const rowId = $button.parent().find('input').data('rowid');
+        let rowId = $button.parent().find('input').data('rowid');
+        rowId = rowId.replace('cart-row-','');
+        rowId = parseInt(rowId);
         updateCart(rowId,newVal)
+        console.log(rowId);
 	});
 
     function updateCart(rowId, qty){

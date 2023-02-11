@@ -167,8 +167,8 @@
 
                     </p>
                     <div class="product-price">
-                        $35.00
-                        <span>HandBag</span>
+                        100,000đ
+                        <span>T-shirt</span>
                     </div>
                 </div>
                 <div class="countdown-timer" id="countdown">
@@ -298,7 +298,7 @@
                                         {{ count($blog->blogComments) }}
                                     </div>
                                 </div>
-                                <a href="">
+                                <a href="/blog/{{$blog->id}}">
                                     <h4>
                                         {{ $blog->title }}  
                                     </h4>

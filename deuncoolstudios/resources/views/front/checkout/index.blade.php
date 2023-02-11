@@ -84,9 +84,15 @@
                                 <div class="order-total">
                                     <ul class="order-table">
                                         <li>Product <span>Total</span></li>
-                                        @foreach ($carts as $cart)
-                                            <li class="fw-normal">{{ $cart->name }} x {{ $cart->qty }} <span>{{ number_format($cart->price * $cart->qty) }}đ</span></li>
-                                        @endforeach
+                                        @if(auth()->user())
+                                            @foreach ($carts as $cart)
+                                                <li class="fw-normal">{{ $cart->product->name }} x {{ $cart->qty }} <span>{{ number_format($cart->price * $cart->qty) }}đ</span></li>
+                                            @endforeach
+                                        @else
+                                            @foreach ($carts as $cart)
+                                                <li class="fw-normal">{{ $cart->name }} x {{ $cart->qty }} <span>{{ number_format($cart->price * $cart->qty) }}đ</span></li>
+                                            @endforeach
+                                        @endif
                                         <li class="fw-normal">Total <span>{{ $subtotal }}đ</span></li>
                                         <li class="total-price">Total <span>{{ $total }}đ</span></li>
                                     </ul>

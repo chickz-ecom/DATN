@@ -114,7 +114,7 @@
                                         <label for="price"
                                             class="col-md-3 text-md-center col-form-label">Price</label>
                                         <div class="col-md-9 col-xl-8">
-                                            <p>{{$product->price}}</p>
+                                            <p>{{$product->price}}đ</p>
                                         </div>
                                     </div>
 
@@ -122,7 +122,7 @@
                                         <label for="discount"
                                             class="col-md-3 text-md-center col-form-label">Discount</label>
                                         <div class="col-md-9 col-xl-8">
-                                            <p>{{$product->discount}}</p>
+                                            <p>{{$product->discount}}đ</p>
                                         </div>
                                     </div>
 

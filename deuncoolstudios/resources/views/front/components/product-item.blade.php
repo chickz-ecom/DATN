@@ -36,10 +36,10 @@
         </a>
         <div class="product-price">
             @if ($product->discount!=null)
-                {{ $product->discount }}
-                <span>{{ $product->price }}</span>
+                {{ $product->discount }}đ
+                <span>{{ $product->price }}đ</span>
             @else
-                {{ $product->price }}
+                {{ $product->price }}đ
             @endif
         </div>
     </div>

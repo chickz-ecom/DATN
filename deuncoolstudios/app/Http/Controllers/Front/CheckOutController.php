@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Models\OrderDetail;
+use App\Models\UserCart;
 use App\Utilities\VNPay;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -15,6 +16,18 @@ class CheckOutController extends Controller
 {
     //
     public function index(){
+        if(auth()->user()){
+            $carts = UserCart::where('user_id', auth()->user()->id)->get();
+            // $total = array_sum(array_column($carts->user->toArray(), 'user_id'));
+            $totals = UserCart::select('total')->where('user_id', auth()->user()->id)->get();
+            $total = 0;
+            foreach($totals as $item){
+                $total += $item->total;
+            }
+            $subtotal = $total;
+            return view('front/checkout/index', compact('carts','total','subtotal'));
+
+        }
         $carts = Cart::content();
         $total = Cart::total();
         $subtotal = Cart::subtotal();
@@ -107,6 +120,18 @@ class CheckOutController extends Controller
     }
     public function result(){
         $notification = session('notification');
+        if(auth()->user()){
+            $carts = UserCart::where('user_id', auth()->user()->id)->get();
+            // $total = array_sum(array_column($carts->user->toArray(), 'user_id'));
+            $totals = UserCart::select('total')->where('user_id', auth()->user()->id)->get();
+            $total = 0;
+            foreach($totals as $item){
+                $total += $item->total;
+            }
+
+            return view('front/index', compact('carts','total', 'notification'));
+
+        }
         return view('front.checkout.result', compact('notification'));
     }
 }

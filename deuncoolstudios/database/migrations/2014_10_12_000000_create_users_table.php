@@ -29,6 +29,8 @@ return new class extends Migration
             $table->text('country')->nullable();
             $table->text('street_address')->nullable();
             $table->text('town_city')->nullable();
+            $table->tinyInteger('status')->default(0);
+            // $table->integer('cart_id');
             $table->text('phone')->nullable();
 
 

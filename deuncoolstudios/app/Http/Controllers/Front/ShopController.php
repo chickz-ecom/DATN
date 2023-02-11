@@ -7,6 +7,8 @@ use App\Models\Brand;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use App\Models\ProductComment;
+use App\Models\UserCart;
+use Exception;
 use Illuminate\Http\Request;
 
 class ShopController extends Controller
@@ -24,7 +26,7 @@ class ShopController extends Controller
 
         $brands = Brand::all();
 
-        $perPage = $request->show ?? 9;
+        $perPage = $request->show ?? 6;
         $sortBy = $request->sort_by ?? 'latest';
         $search = $request->search ?? '';
 
@@ -33,6 +35,19 @@ class ShopController extends Controller
         $products = $this->filter($products, $request);
 
         $products = $this->sortAndPagination($products,$sortBy,$perPage);
+
+        if(auth()->user()){
+            $carts = UserCart::where('user_id', auth()->user()->id)->get();
+            // $total = array_sum(array_column($carts->user->toArray(), 'user_id'));
+            $totals = UserCart::select('total')->where('user_id', auth()->user()->id)->get();
+            $total = 0;
+            foreach($totals as $item){
+                $total += $item->total;
+            }
+
+            return view('front/shop/index', compact('carts','total', 'products', 'brands', 'categories'));
+
+        }
 
         return view('front.shop.index', compact('products', 'categories', 'brands'));
     }
@@ -83,6 +98,19 @@ class ShopController extends Controller
         if($countRating!=0){
             $avgRating = $sumRating/$countRating;
         }
+
+        if(auth()->user()){
+            $carts = UserCart::where('user_id', auth()->user()->id)->get();
+            // $total = array_sum(array_column($carts->user->toArray(), 'user_id'));
+            $totals = UserCart::select('total')->where('user_id', auth()->user()->id)->get();
+            $total = 0;
+            foreach($totals as $item){
+                $total += $item->total;
+            }
+
+            return view('front/shop/show', compact('carts','total', 'product', 'avgRating', 'relatedProducts', 'brands', 'categories'));
+
+        }
         return view('front/shop/show',[
             'product'=>$product,
             'avgRating'=>$avgRating,
@@ -127,7 +155,18 @@ class ShopController extends Controller
     }
 
     public function postComment(Request $request){
-        ProductComment::create($request->all());
+        if(!auth()->user()){
+            return redirect('account/login');
+        }
+        $data = $request->all();
+        $data['name'] = auth()->user()->first_name . ' ' . auth()->user()->last_name;
+        $data['email'] = auth()->user()->email;
+        $check = ProductComment::where(['user_id'=>$data['user_id'],'product_id'=>$data['product_id']])->first();
+        if($check){
+            $check->update($data);
+            return redirect()->back();
+        }
+        ProductComment::create($data);
         return redirect()->back();
     }
     public function category($categoryName, Request $request){
@@ -135,7 +174,7 @@ class ShopController extends Controller
         $brands = Brand::all();
 
 
-        $perPage = $request->show ?? 3;
+        $perPage = $request->show ?? 6;
         $sortBy = $request->sort_by ?? 'latest';
         $products = ProductCategory::where('name', $categoryName)->first()->products->toQuery();
 
@@ -146,6 +185,20 @@ class ShopController extends Controller
         $sortBy = $request->sort_by ?? 'latest';
 
         $products = $this->sortAndPagination($products,$sortBy,$perPage);
+
+        if(auth()->user()){
+            $carts = UserCart::where('user_id', auth()->user()->id)->get();
+            // $total = array_sum(array_column($carts->user->toArray(), 'user_id'));
+            $totals = UserCart::select('total')->where('user_id', auth()->user()->id)->get();
+            $total = 0;
+            foreach($totals as $item){
+                $total += $item->total;
+            }
+
+            return view('front.shop.index', compact('carts','total', 'products', 'categories', 'brands'));
+
+        }
+
         return view('front.shop.index', compact('products','categories', 'brands'));
     }
     public function sortAndPagination($products,$sortBy,$perPage){
@@ -187,9 +240,7 @@ class ShopController extends Controller
         $priceMax = $request->price_max;
         $priceMin = str_replace('đ', '', $priceMin);
         $priceMax = str_replace('đ', '', $priceMax);
-        $products = ($priceMin != null && $priceMax != null) ? $products->whereBetween('price', [$priceMin, $priceMax]) : $products;
-
-
+        $products = ($priceMin != null && $priceMax != null) ? $products->whereBetween('price', [$priceMin, $priceMax])->orderby('price') : $products;
         //color
         $color = $request->color;
         $products = $color != null 

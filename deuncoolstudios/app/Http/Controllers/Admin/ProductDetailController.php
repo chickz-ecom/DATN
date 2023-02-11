@@ -44,6 +44,7 @@ class ProductDetailController extends Controller
         //
         $data = $request->all();
         ProductDetail::create($data);
+        $this->updateQty($id);
         return redirect('admin/product/' . $id . '/detail');
     }
 
@@ -99,5 +100,12 @@ class ProductDetailController extends Controller
         //
         ProductDetail::find($detail)->delete();
         return redirect('admin/product/' . $product . '/detail');
+    }
+    public function updateQty($product_id){
+        $product = Product::find($product_id);
+        $productDetails = $product->productDetails;
+        $total = array_sum(array_column($productDetails->toArray(), 'qty'));
+        $product->qty = $total;
+        $product->save();
     }
 }

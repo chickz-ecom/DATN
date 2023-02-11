@@ -9,10 +9,12 @@ use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\ShopController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductCategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductDetailController;
 use App\Http\Controllers\Admin\ProductImageController;
+use App\Http\Controllers\Front\BlogController;
 use App\Models\Brand;
 use App\Models\User;
 use App\Repositories\Product\ProductRepositoryInterface;
@@ -41,7 +43,12 @@ Route::prefix('/shop')->group(function(){
     
     Route::get('/{categoryName}', [ShopController::class, 'category']);
 });
+Route::prefix('/blog')->group(function(){
 
+    Route::get('/', [BlogController::class, 'index']);
+    Route::get('detail/{id}', [BlogController::class, 'show']);
+
+});
 Route::prefix('/cart')->group(function(){
     Route::get('add/{id}',[CartController::class, 'add']);
     Route::get('/',[CartController::class, 'index']);
@@ -80,6 +87,7 @@ Route::prefix('admin')->middleware('CheckAdminLogin')->group(function(){
     Route::resource('product', ProductController::class);
     Route::resource('product/{product_id}/image', ProductImageController::class);
     Route::resource('product/{product_id}/detail', ProductDetailController::class);
+    Route::resource('order', OrderController::class);
     Route:: prefix('login')->group(function(){
         Route::get('/', [AdminHomeController::class, 'getLogin'])->withoutMiddleware('CheckAdminLogin');
         Route::post('/', [AdminHomeController::class, 'postLogin'])->withoutMiddleware('CheckAdminLogin');

@@ -42,7 +42,7 @@
                                             <option value="price-descending" {{ request('sort_by') == 'lastest' ? 'selected' : '' }}>Sorting: Decrease</option>
                                         </select>
                                         <select name="show" id="" class="p-show" onChange="this.form.submit();">
-                                            <option value="3" {{ request('show') == '3' ? 'selected' : '' }}>Show:3</option>
+                                            <option value="3" {{ request('show') == '6' ? 'selected' : '' }}>Show:6</option>
                                             <option value="9" {{ request('show') == '9' ? 'selected' : '' }}>Show:9</option>
                                             <option value="15" {{ request('show') == '15' ? 'selected' : '' }}>Show:15</option>
                                         </select>

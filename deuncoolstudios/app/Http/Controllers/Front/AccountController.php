@@ -7,6 +7,7 @@ use App\Http\Requests\Request\RegisterRequest;
 use App\Models\Order;
 use App\Models\OrderDetail;
 use App\Models\User;
+use App\Models\UserCart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -18,6 +19,17 @@ class AccountController extends Controller
 {
     //
     public function login(){
+        if(auth()->user()){
+            $carts = UserCart::where('user_id', auth()->user()->id)->get();
+            // $total = array_sum(array_column($carts->user->toArray(), 'user_id'));
+            $totals = UserCart::select('total')->where('user_id', auth()->user()->id)->get();
+            $total = 0;
+            foreach($totals as $item){
+                $total += $item->total;
+            }
+
+            return view('front.account.login', compact('carts','total'));
+        }
         return view('front.account.login');
     }
     public function checkLogin(Request $request){
@@ -30,7 +42,7 @@ class AccountController extends Controller
         $remember = $request->remember;
 
         if(Auth::attempt($credentials, $remember)){
-            return redirect()->intended();
+            return redirect('/');
         }
         else{
             return back()->with('notification', 'Tài khoản hoặc mật khẩu không chính xác');
@@ -41,7 +53,14 @@ class AccountController extends Controller
         return back();
     }
     public function register(){
-        return view("front/account/register");
+        $carts = UserCart::where('user_id', auth()->user()->id)->get();
+        // $total = array_sum(array_column($carts->user->toArray(), 'user_id'));
+        $totals = UserCart::select('total')->where('user_id', auth()->user()->id)->get();
+        $total = 0;
+        foreach($totals as $item){
+            $total += $item->total;
+        }
+        return view("front/account/register", compact('carts','total'));
     }
     public function postRegister(RegisterRequest $request){
         $data = $request->all();
@@ -58,17 +77,38 @@ class AccountController extends Controller
         }
     }
     public function myOrderIndex(){
+        $carts = UserCart::where('user_id', auth()->user()->id)->get();
+        // $total = array_sum(array_column($carts->user->toArray(), 'user_id'));
+        $totals = UserCart::select('total')->where('user_id', auth()->user()->id)->get();
+        $total = 0;
+        foreach($totals as $item){
+            $total += $item->total;
+        }
         $orders = Order::where('user_id', Auth::id())->get();
-        return view('front.account.my-order.index', compact('orders'));
+        return view('front.account.my-order.index', compact('orders','carts','total'));
     }
     public function myOrderShow($id){
+        $carts = UserCart::where('user_id', auth()->user()->id)->get();
+        // $total = array_sum(array_column($carts->user->toArray(), 'user_id'));
+        $totals = UserCart::select('total')->where('user_id', auth()->user()->id)->get();
+        $total = 0;
+        foreach($totals as $item){
+            $total += $item->total;
+        }
         $order = Order::where('id', $id)->firstOrFail();
         // dd($order);
-        return view('front.account.my-order.show', compact('order'));
+        return view('front.account.my-order.show', compact('order','carts','total'));
     }
     public function manageAccount(){
         $user = User::where('id', auth()->user()->id)->firstOrFail();
-        return view('front.account.manage', compact('user'));
+        $carts = UserCart::where('user_id', auth()->user()->id)->get();
+        // $total = array_sum(array_column($carts->user->toArray(), 'user_id'));
+        $totals = UserCart::select('total')->where('user_id', auth()->user()->id)->get();
+        $total = 0;
+        foreach($totals as $item){
+            $total += $item->total;
+        }
+        return view('front.account.manage', compact('user','carts','total'));
     }
     private function sendMail($user){
         $email_to = $user->email;
