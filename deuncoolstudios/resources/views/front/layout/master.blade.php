@@ -55,7 +55,7 @@
                 <div class="ht-right">
                     @if (Auth::check())
                     <div class="login-panel manage-account">
-                        <img src="front/img/user/avatar-1.png" alt="" class="avatar-account">
+                        <img src="front/img/user/{{Auth::user()->avatar ?? '_default-user.png'}}" alt="" class="avatar-account">
                         {{ Auth::user()->first_name }}
                         <ul class="dropdown1">
                             <li><a href="./account/manage">Quản lý tài khoản</a></li>

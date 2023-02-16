@@ -34,6 +34,7 @@
                                         <tr>
                                             <th>Image</th>
                                             <th class="p-name">Product Name</th>
+                                            <th>Size</th>
                                             <th>Price</th>
                                             <th>Quantity</th>
                                             <th>Total</th>
@@ -47,8 +48,13 @@
                                                     <img style="height:170px;" src="front/img/products/{{ $cart->image }}" alt="">
                                                 </td>
                                                 <td class="cart-title first-row">
-                                                    <h5>{{ $cart->name }}</h5>
+                                                    <h5>{{ $cart->product->name }}</h5>
                                                 </td>
+                                                @if($cart->size!=null)
+                                                    <td class="cart-title first-row">{{$cart->size}}</td>
+                                                @else
+                                                    <td class="cart-title first-row">default</td>
+                                                @endif
                                                 <td class="p-price first-row">{{ number_format($cart->price) }}đ</td>
                                                 <td class="qua-col first-row">
                                                     <div class="quantity">
@@ -61,7 +67,7 @@
                                                     {{ number_format($cart->price * $cart->qty) }}đ
                                                 </td>
                                                 <td class="close-td first-row">
-                                                    <i class="ti-close" onclick="window.location='./cart/delete/{{ $cart->rowId }}'"></i>
+                                                    <i class="ti-close" onclick="window.location='./cart/delete/{{ $cart->id }}'"></i>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -99,6 +105,7 @@
                                             <tr>
                                                 <th>Image</th>
                                                 <th class="p-name">Product Name</th>
+                                                <th>Size</th>
                                                 <th>Price</th>
                                                 <th>Quantity</th>
                                                 <th>Total</th>
@@ -114,6 +121,11 @@
                                                     <td class="cart-title first-row">
                                                         <h5>{{ $cart->name }}</h5>
                                                     </td>
+                                                    @if($cart->options->size!=null)
+                                                        <td class="cart-title first-row">{{$cart->options->size}}</td>
+                                                    @else
+                                                        <td class="cart-title first-row">default</td>
+                                                    @endif
                                                     <td class="p-price first-row">{{ number_format($cart->price) }}đ</td>
                                                     <td class="qua-col first-row">
                                                         <div class="quantity">

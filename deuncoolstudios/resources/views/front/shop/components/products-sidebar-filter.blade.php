@@ -57,49 +57,6 @@
     </div>
     <div class="filter-widget">
         <h4 class="fw-title">
-            Color
-        </h4>
-        <div class="fw-color-choose">
-            <div class="cs-item">
-                <input type="radio" name="color" value="black" onchange="this.form.submit();" id="cs-black"
-                    {{ request('color') == "black" ? 'checked' : '' }}
-                >
-                <label for="cs-black" class="cs-black {{ request('color') == "black" ? 'font-weight-bold' : '' }}">black</label>
-            </div>
-            <div class="cs-item">
-                <input type="radio" name="color" value="red" onchange="this.form.submit();" id="cs-red"
-                {{ request('color') == "red" ? 'checked' : '' }}
-                >
-                <label for="cs-red" class="cs-red {{ request('color') == "red" ? 'font-weight-bold' : '' }}">red</label>
-            </div>
-            <div class="cs-item">
-                <input type="radio" name="color" value="violet" onchange="this.form.submit();" id="cs-violet"
-                {{ request('color') == "violet" ? 'checked' : '' }}
-                >
-                <label for="cs-violet" class="cs-violet {{ request('color') == "violet" ? 'font-weight-bold' : '' }}">violet</label>
-            </div>
-            <div class="cs-item">
-                <input type="radio" name="color" value="blue" onchange="this.form.submit();" id="cs-blue"
-                {{ request('color') == "blue" ? 'checked' : '' }}
-                >
-                <label for="cs-blue" class="cs-blue {{ request('color') == "blue" ? 'font-weight-bold' : '' }}">blue</label>
-            </div>
-            <div class="cs-item">
-                <input type="radio" name="color" value="yellow" onchange="this.form.submit();" id="cs-yellow"
-                {{ request('color') == "yellow" ? 'checked' : '' }}
-                >
-                <label for="cs-yellow" class="cs-yellow {{ request('color') == "yellow" ? 'font-weight-bold' : '' }}">yellow</label>
-            </div>
-            <div class="cs-item">
-                <input type="radio" name="color" value="" onchange="this.form.submit();" id="cs-green"
-                {{ request('color') == "green" ? 'checked' : '' }}
-                >
-                <label for="cs-green" class="cs-green" {{ request('color') == "green" ? 'font-weight-bold' : '' }}>green</label>
-            </div>
-        </div>
-    </div>
-    <div class="filter-widget">
-        <h4 class="fw-title">
             Size
         </h4>
         <div class="fw-size-choose">
@@ -127,19 +84,6 @@
                 >
                 <label for="xl-size" class="{{ request('size') == 'xl' ? 'active' : '' }}">XL</label>
             </div>
-        </div>
-    </div>
-    <div class="filter-widget">
-        <h4 class="fw-title">
-            Tags
-        </h4>
-        <div class="fw-tags">
-            <a href="#">Coat</a>
-            <a href="#">Towel</a>
-            <a href="#">Shoes</a>
-            <a href="#">Dresses</a>
-            <a href="#">Coat</a>
-            <a href="#">Coat</a>
         </div>
     </div>
 </form>

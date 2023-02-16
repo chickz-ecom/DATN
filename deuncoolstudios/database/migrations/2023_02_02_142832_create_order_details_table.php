@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('product_id')->unsigned();
             $table->integer('qty');
             $table->double('amount');
+            $table->string('size')->nullable();
             $table->double('total');
             $table->timestamps();
         });

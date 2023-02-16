@@ -32,6 +32,9 @@
                         <div class="col-lg-6">
                             <div class="product-pic-zoom">
                                 <img src="front/img/products/{{ $product->productImages[0]->path ?? '' }}" class="product-big-img" alt="">
+                                @if ($product->qty<1)
+                                    <img src="front/img/products/sold_out.png" class="image-sold-out">
+                                @endif
                                 <div class="zoom-icon">
                                     <i class="fa fa-search-plus"></i>
                                 </div>
@@ -74,31 +77,32 @@
                                         <h4>{{ $product->price }}đ</h4>
                                     @endif
                                 </div>
-                                <div class="pd-color">
-                                    <h6>Color</h6>
-                                    <div class="pd-color-choose">
-                                        @foreach (array_unique(array_column($product->productDetails->toArray(), 'color')) as $color)
-                                            <div class="cc-item">
-                                                <input type="radio" id="cc-{{ $color }}">
-                                                <label for="cc-{{ $color }}" class="cc-{{ $color }}"></label>
+                                <form action="/cart/add/{{$product->id}}" method="get">
+                                    @csrf
+                                    <div class="pd-size-choose">
+                                        @foreach (array_unique(array_column($product->productDetails->toArray(), 'size')) as $size)
+                                            <div class="sc-item">
+                                                <input type="radio" id="sm-{{ $size }}" name="size" value="{{$size}}">
+                                                <label for="sm-{{ $size }}" class="{{$loop->index == 0 ? 'active' : ''}}">{{ $size }}</label>
                                             </div>
                                         @endforeach
                                     </div>
-                                </div>
-                                <div class="pd-size-choose">
-                                    @foreach (array_unique(array_column($product->productDetails->toArray(), 'size')) as $size)
-                                        <div class="sc-item">
-                                            <input type="radio" id="sm-{{ $size }}">
-                                            <label for="sm-{{ $size }}">{{ $size }}</label>
+                                    @if (session('notification'))
+                                        <h6 class="alert alert-warning" role="alert">
+                                            {{ session('notification') }}
+                                        </h6>
+                                    @endif
+                                    <div class="quantity">
+                                        <div class="pro-qty">
+                                            <input type="number" name="qty" id="" value="1">
                                         </div>
-                                    @endforeach
-                                </div>
-                                <div class="quantity">
-                                    <div class="pro-qty">
-                                        <input type="text" name="" id="" value="1">
+                                        @if ($product->qty<0)
+                                            <div class="primary-btn pd-cart add-to-cart" style="background-color: #8b8888">ADD TO CART</div>
+                                        @else
+                                            <button type="submit" class="primary-btn pd-cart add-to-cart">ADD TO CART</button>
+                                        @endif
                                     </div>
-                                    <a href="#" class="primary-btn pd-cart">ADD TO CART</a>
-                                </div>
+                                </form>
                                 <ul class="pd-tags">
                                     <li><span>CATEGORIES</span>: {{ $product->productCategory->name }}</li>
                                     <li><span>TAGS</span>: {{ $product->tag }}</li>
@@ -199,20 +203,9 @@
                                                     </div>
                                                 </td>
                                             </tr>
+                                           
                                             <tr>
-                                                <td class="p-catagory">
-                                                    Color
-                                                </td>
-                                                <td>
-                                                    @foreach (array_unique(array_column($product->productDetails->toArray(), 'color')) as $color)
-                                                        <div class="cc-item">
-                                                            <label class="cs-{{ $color }}"></label>
-                                                        </div>
-                                                    @endforeach
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="catagory">Sku</td>
+                                                <td class="p-catagory">Sku</td>
                                                 <td><div class="p-code">{{ $product->sku }}</div></td>
                                             </tr>
                                         </table>

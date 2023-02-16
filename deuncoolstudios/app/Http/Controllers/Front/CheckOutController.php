@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Models\OrderDetail;
+use App\Models\Product;
+use App\Models\ProductDetail;
 use App\Models\UserCart;
 use App\Utilities\VNPay;
 use Illuminate\Http\Request;
@@ -26,7 +28,6 @@ class CheckOutController extends Controller
             }
             $subtotal = $total;
             return view('front/checkout/index', compact('carts','total','subtotal'));
-
         }
         $carts = Cart::content();
         $total = Cart::total();
@@ -35,34 +36,88 @@ class CheckOutController extends Controller
         return view('front.checkout.index', compact('carts', 'total', 'subtotal'));
     }
     public function addOrder(Request $request){
-        // Them don hang
         $dataOrder = $request->all();
         $dataOrder['user_id'] = auth()->user()->id ?? 0;
+        if(auth()->user()){
+            $dataOrder['email'] = auth()->user()->email;
+        }
         $order = Order::create($dataOrder);
+        
         // Them chi tiet don hang
-        $carts = Cart::content();
+        if(auth()->user()){
+            $carts = UserCart::where(['user_id'=>auth()->user()->id])->get();
+        }
+        else{
+            $carts = Cart::content();
+        }
         if($request->payment_type == 'pay_later'){ 
-    
-            foreach ($carts as $cart) {
-                # code...
-                $data = [
-                    'order_id'=>$order->id,
-                    'product_id'=>$cart->id,
-                    'qty'=>$cart->qty,
-                    'amount'=>$cart->price,
-                    'total'=>$cart->price * $cart->qty,
-                ];  
-    
-                OrderDetail::create($data);
+            if(auth()->user()){
+                foreach($carts as $cart){
+                    $data = [
+                        'order_id'=>$order->id,
+                        'product_id'=>$cart->product_id,
+                        'qty'=>$cart->qty,
+                        'amount'=>$cart->price,
+                        'total'=>$cart->price * $cart->qty,
+                        'size'=>$cart->size
+                    ];
+                    OrderDetail::create($data);
+                }
             }
+            else{
+                foreach ($carts as $cart) {
+                    $data = [
+                        'order_id'=>$order->id,
+                        'product_id'=>$cart->id,
+                        'qty'=>$cart->qty,
+                        'amount'=>$cart->price,
+                        'total'=>$cart->price * $cart->qty,
+                        'size' => $cart->options->size
+                    ];  
+                    OrderDetail::create($data);
+                }
+            }
+            
+            
             // gửi mail
-            $total = Cart::total();
-            $subtotal = Cart::subtotal();
-            $this->sendMail($order,$total, $subtotal);
+            if(auth()->user()){
+                $totals = UserCart::select('total')->where('user_id', auth()->user()->id)->get();
+                $total = 0;
+                foreach($totals as $item){
+                    $total += $item->total;
+                }
+                $subtotal = $total;
+            }
+            else{
+                $total = Cart::total();
+                $subtotal = Cart::subtotal();
+            }
+            
 
+            // up date lai so luong san pham
+            
+            //cap nhat du lieu cua product
+            $orderDetails = OrderDetail::where('order_id', $order->id)->get();
+
+            // dd($orderDetails);
+            foreach($orderDetails as $orderDetail){
+                $product = Product::where('id', $orderDetail->product_id)->firstOrFail();
+                $product->qty = $product->qty- $orderDetail->qty;
+                $product->save();
+                $productDetail = ProductDetail::where(['product_id'=>$product->id])->where('size', $orderDetail->size)->first();
+                if($productDetail){
+                    $productDetail->qty = $productDetail->qty - $orderDetail->qty;
+                    $productDetail->save();
+                }
+            }
+            
             // Xoa gio hang
+            $this->sendMail($order,$total, $subtotal);
             Cart::destroy();
-            // Tra ve ket qua
+            if(auth()->user()){
+                UserCart::where('user_id', auth()->user()->id)->delete();
+            }
+            // Tra ve ket qua   
             return redirect('checkout/result')->with('notification', 'Đặt hàng thành công, vui lòng kiểm tra email để xem thông tin chi tiết đơn hàng');
          }
          if($request->payment_type == 'online_payment'){ 
@@ -129,7 +184,7 @@ class CheckOutController extends Controller
                 $total += $item->total;
             }
 
-            return view('front/index', compact('carts','total', 'notification'));
+            return view('front/checkout/result', compact('carts','total', 'notification'));
 
         }
         return view('front.checkout.result', compact('notification'));

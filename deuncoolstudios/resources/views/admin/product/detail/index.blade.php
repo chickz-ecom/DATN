@@ -38,7 +38,6 @@
                                         <thead>
                                             <tr class="header-table">
                                                 <th class="pl-4">Product Name</th>
-                                                <th>Color</th>
                                                 <th>Size</th>
                                                 <th>Qty</th>
                                                 <th class="text-center">Actions</th>
@@ -48,8 +47,6 @@
                                             @foreach ($product->productDetails as $detail)
                                                 <tr>
                                                     <td class="pl-4 text-muted">{{$product->name}}</td>
-
-                                                    <td class="">{{$detail->color}}</td>
                                                     <td class="">{{$detail->size}}</td>
                                                     <td class="">{{$detail->qty}}</td>
                                                     

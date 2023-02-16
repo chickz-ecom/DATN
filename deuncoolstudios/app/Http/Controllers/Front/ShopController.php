@@ -173,7 +173,6 @@ class ShopController extends Controller
         $categories = ProductCategory::all();
         $brands = Brand::all();
 
-
         $perPage = $request->show ?? 6;
         $sortBy = $request->sort_by ?? 'latest';
         $products = ProductCategory::where('name', $categoryName)->first()->products->toQuery();
@@ -181,10 +180,6 @@ class ShopController extends Controller
         $products = $this->filter($products, $request);
 
         $products = $this->sortAndPagination($products, $sortBy, $perPage);
-        $perPage = $request->show ?? 3;
-        $sortBy = $request->sort_by ?? 'latest';
-
-        $products = $this->sortAndPagination($products,$sortBy,$perPage);
 
         if(auth()->user()){
             $carts = UserCart::where('user_id', auth()->user()->id)->get();

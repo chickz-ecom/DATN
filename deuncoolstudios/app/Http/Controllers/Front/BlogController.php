@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
+use App\Models\BlogComment;
 use App\Models\UserCart;
 use Illuminate\Http\Request;
 
@@ -42,5 +43,23 @@ class BlogController extends Controller
 
         }
         return  view('front/blog/show', compact('blog'));
+    }
+    public function postComment(Request $request, $id){
+        if(!auth()->user()){
+            return redirect('account/login');
+        }
+        $data = $request->all();
+        // dd($data);
+        $data['name'] = auth()->user()->first_name . ' ' . auth()->user()->last_name;
+        $data['email'] = auth()->user()->email;
+        $data['user_id'] = auth()->user()->id;
+        $data['blog_id']=$id;
+        $check = BlogComment::where(['user_id'=>auth()->user()->id,'blog_id'=>$id])->first();
+        if($check){
+            $check->update($data);
+            return redirect()->back();
+        }
+        BlogComment::create($data);
+        return redirect()->back();
     }
 }

@@ -1,27 +1,31 @@
 <div class="product-item item {{ $product->tag }}">
-    <div class="pi-pic">
+    <div class="pi-pic" style="position: relative;">
         <img src="front/img/products/{{ $product->productImages[0]->path ?? '' }}" alt="">
         @if ($product->discount!=null)
             <div class="sale">
-                Sale
+                Sale off
             </div>
         @endif
-        <div class="icon">
-            <i class="icon_heart_alt"></i>
-        </div>
+        @if ($product->qty<1)
+            <img src="front/img/products/sold_out.png" class="image-sold-out" style="right: 5%; width:20%; left:unset">
+        @endif
         <ul>
-            <li class="w-icon active">
-                <a href="/cart/add/{{ $product->id }}">
-                    <i class="icon_bag_alt"></i>
-                </a>
-            </li>
+            @if ($product->qty<1)
+                <li class="w-icon">
+                    <div style="padding: 16px 18px 12px 19px;background-color:rgb(117, 114, 114)">
+                        <i class="icon_bag_alt"></i>
+                    </div>
+                </li>
+            @else  
+                <li class="w-icon active">
+                    <a href="/cart/add/{{ $product->id }}" style="position: relative;">
+                        <i class="icon_bag_alt"></i>
+                        <div class="tooltip-add-to-cart">Add to cart</div>
+                    </a>
+                </li>
+                @endif
             <li class="quick-view">
                 <a href="shop/product/{{ $product->id }}">Quick View</a>
-            </li>
-            <li class="w-icon">
-                <a href="">
-                    <i class="fa fa-random"></i>
-                </a>
             </li>
         </ul>
     </div>

@@ -4,16 +4,19 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Request\RegisterRequest;
+use App\Http\Requests\ChangePassword;
 use App\Models\Order;
 use App\Models\OrderDetail;
 use App\Models\User;
 use App\Models\UserCart;
+use App\Utilities\Common;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
 
 class AccountController extends Controller
 {
@@ -100,6 +103,7 @@ class AccountController extends Controller
         return view('front.account.my-order.show', compact('order','carts','total'));
     }
     public function manageAccount(){
+        if(!auth()->user()) return redirect('account/login');
         $user = User::where('id', auth()->user()->id)->firstOrFail();
         $carts = UserCart::where('user_id', auth()->user()->id)->get();
         // $total = array_sum(array_column($carts->user->toArray(), 'user_id'));
@@ -109,6 +113,31 @@ class AccountController extends Controller
             $total += $item->total;
         }
         return view('front.account.manage', compact('user','carts','total'));
+    }
+    public function updateUser(Request $request, $id){
+        $data = $request->all();
+        if($request->get('password')!=null){
+            $data['password'] = Hash::make($data['password']);
+        }
+        else{
+            unset($data['password']);
+        }
+
+        // handle file 
+        if($request->hasFile('image')){
+            $data['avatar'] = Common::uploadFile($request->file('image'), 'front/img/user');
+
+            $file_name_old = $request->get('image_old');
+            if($file_name_old!=''){
+                unlink('front/img/user' . $file_name_old);
+            }
+        }
+        if($request->get('level')){
+            unset($data['level']);
+        }
+        $user = User::find(auth()->user()->id);
+        $user->update($data);
+        return redirect('account/manage');
     }
     private function sendMail($user){
         $email_to = $user->email;
@@ -127,5 +156,30 @@ class AccountController extends Controller
         ]);
         $user->save();
         return redirect('account/login')->with('success','Bạn đã kích hoạt tài khoản thành công, mời bạn đăng nhập');
+    }
+    public function changePassword(){
+        if(!auth()->user()) return redirect('account/login');
+        $user = User::where('id', auth()->user()->id)->firstOrFail();
+        $carts = UserCart::where('user_id', auth()->user()->id)->get();
+        // $total = array_sum(array_column($carts->user->toArray(), 'user_id'));
+        $totals = UserCart::select('total')->where('user_id', auth()->user()->id)->get();
+        $total = 0;
+        foreach($totals as $item){
+            $total += $item->total;
+        }
+        return view('front/account/changePassword', compact('carts','total'));
+    }
+    public function updatePassword(ChangePassword $request){
+        $data = $request->all();
+        // $data['old_password'] = Hash::make($data['old_password']);
+        // dd($data['old_password']);
+        
+        if(!Hash::check($data['old_password'],auth()->user()->password)){
+            return redirect()->back()->withErrors("Mật khẩu cũ không đúng!!!");
+        }
+        $data['password'] = Hash::make($data['password']);
+        $user = User::find(auth()->user()->id);
+        $user->update($data);
+        return redirect()->back()->with('notification', 'Bạn đã thay đổi mật khẩu thành công!!!' );
     }
 }

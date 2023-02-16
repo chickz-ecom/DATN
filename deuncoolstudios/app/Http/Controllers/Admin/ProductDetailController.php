@@ -86,6 +86,7 @@ class ProductDetailController extends Controller
         $data = $request->all();
         $detail = ProductDetail::where('id', $detail)->firstOrFail();
         $detail->update($data);
+        $this->updateQty($product);
         return redirect('admin/product/' . $product . '/detail');
     }
 

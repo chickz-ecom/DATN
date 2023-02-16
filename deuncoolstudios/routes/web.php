@@ -34,7 +34,7 @@ use Illuminate\Support\Facades\Auth;
 */
     #Client 
 Route::get('/', [HomeController::class, 'index']);
-// 
+// Shop
 Route::prefix('/shop')->group(function(){
     Route::get('product/{id}', [ShopController::class, 'show']);
     Route::post('product/{id}', [ShopController::class, 'postComment']);
@@ -43,10 +43,13 @@ Route::prefix('/shop')->group(function(){
     
     Route::get('/{categoryName}', [ShopController::class, 'category']);
 });
+
+//Blog
 Route::prefix('/blog')->group(function(){
 
     Route::get('/', [BlogController::class, 'index']);
     Route::get('detail/{id}', [BlogController::class, 'show']);
+    Route::post('detail/{id}', [BlogController::class, 'postComment']);
 
 });
 Route::prefix('/cart')->group(function(){
@@ -76,6 +79,9 @@ Route::prefix('account')->group(function(){
         Route::get('/{id}', [AccountController::class, 'myOrderShow']);
     });
     Route::get('manage', [AccountController::class, 'manageAccount'])->middleware('CheckMemberLogin');
+    Route::get('changePassword', [AccountController::class, 'changePassword'])->middleware('CheckMemberLogin');
+    Route::put('changePassword', [AccountController::class, 'updatePassword'])->middleware('CheckMemberLogin');
+    Route::put('manage/{id}', [AccountController::class, 'updateUser']);
 
 });
     # Dashbroad

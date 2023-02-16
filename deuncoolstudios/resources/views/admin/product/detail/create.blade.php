@@ -37,14 +37,6 @@
                                         </div>
 
                                         <div class="position-relative row form-group">
-                                            <label for="color" class="col-md-3 text-md-center col-form-label">Color</label>
-                                            <div class="col-md-9 col-xl-8">
-                                                <input required name="color" id="color" placeholder="Color" type="text"
-                                                    class="form-control" value="">
-                                            </div>
-                                        </div>
-
-                                        <div class="position-relative row form-group">
                                             <label for="size" class="col-md-3 text-md-center col-form-label">Size</label>
                                             <div class="col-md-9 col-xl-8">
                                                 <select required name="size" id="size" class="form-control">
