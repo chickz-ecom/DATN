@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductDetailController;
 use App\Http\Controllers\Admin\ProductImageController;
 use App\Http\Controllers\Front\BlogController;
+use App\Http\Controllers\Front\ForgetPasswordController;
 use App\Models\Brand;
 use App\Models\User;
 use App\Repositories\Product\ProductRepositoryInterface;
@@ -52,6 +53,7 @@ Route::prefix('/blog')->group(function(){
     Route::post('detail/{id}', [BlogController::class, 'postComment']);
 
 });
+#  Cart
 Route::prefix('/cart')->group(function(){
     Route::get('add/{id}',[CartController::class, 'add']);
     Route::get('/',[CartController::class, 'index']);
@@ -65,7 +67,7 @@ Route::prefix('/checkout')->group(function(){
     Route::get('/vnPayCheck', [CheckOutController::class, 'vnPayCheck']);
     Route::get('/result', [CheckOutController::class, 'result']);
 });
-
+# Account 
 Route::prefix('account')->group(function(){
     Route::get("login",[AccountController::class, 'login']);
     Route::post("login",[AccountController::class, 'checkLogin']);
@@ -83,7 +85,15 @@ Route::prefix('account')->group(function(){
     Route::put('changePassword', [AccountController::class, 'updatePassword'])->middleware('CheckMemberLogin');
     Route::put('manage/{id}', [AccountController::class, 'updateUser']);
 
+    Route::get('forgetPassword', [ForgetPasswordController::class, 'index']);
+    Route::post('forgetPassword', [ForgetPasswordController::class, 'sendLink']);
+    Route::get('resetPassword/{token}', [ForgetPasswordController::class, 'show'])->name('resetPassword');;
+    Route::post('resetPassword', [ForgetPasswordController::class, 'changePassword']);
+
+
 });
+
+Route::get('contact', [HomeController::class, 'contact']);
     # Dashbroad
 Route::prefix('admin')->middleware('CheckAdminLogin')->group(function(){
     Route::redirect('', 'admin/user', 301);

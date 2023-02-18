@@ -109,4 +109,18 @@ class HomeController extends Controller
     {
         //
     }
+    public function contact(){
+        if(auth()->user()){
+            $carts = UserCart::where('user_id', auth()->user()->id)->get();
+            // $total = array_sum(array_column($carts->user->toArray(), 'user_id'));
+            $totals = UserCart::select('total')->where('user_id', auth()->user()->id)->get();
+            $total = 0;
+            foreach($totals as $item){
+                $total += $item->total;
+            }
+
+            return view('front/contact', compact('carts','total'));
+        }
+        return view('front/contact');
+    }
 }

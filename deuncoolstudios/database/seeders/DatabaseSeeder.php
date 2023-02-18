@@ -113,28 +113,19 @@ class DatabaseSeeder extends Seeder
 
         DB::table('brands')->insert([
             [
-                'name' => 'Calvin Klein',
-            ],
-            [
-                'name' => 'Diesel',
-            ],
-            [
-                'name' => 'Polo',
-            ],
-            [
-                'name' => 'Tommy Hilfiger',
-            ],
+                'name' => 'Deuncoolstudios',
+            ]
         ]);
 
         DB::table('product_categories')->insert([
             [
-                'name' => 'Men',
+                'name' => 'T-Shirt',
             ],
             [
-                'name' => 'Women',
+                'name' => 'Hoddie',
             ],
             [
-                'name' => 'Kids',
+                'name' => 'Áo khoác nỉ',
             ],
         ]);
 
@@ -142,13 +133,47 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 1,
                 'brand_id' => 1,
-                'product_category_id' => 2,
-                'name' => 'Pure Pineapple',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor',
+                'product_category_id' => 3,
+                'name' => 'Áo khoác nỉ form rộng hoodiezip chất liệu nỉ bông siêu ấm DEUNCOOL',
+                'description' => '<p>DEUNCOOL STUDIOS HOODIE</p>
+
+                <p>Chất liệu : Nỉ cotton 100% (l&oacute;t b&ocirc;ng).</p>
+                
+                <p>&ldquo; Với trường hợp &aacute;o chật bạn h&atilde;y nhắn tin cho shop để shop hỗ trợ đổi size cho bạn nh&eacute;, đừng vội đ&aacute;nh gi&aacute; sản phẩm, tội shop lắm ạ 🥺&ldquo;</p>
+                
+                <p>_________________</p>
+                
+                <p>📦 HƯỚNG DẪN SỬ DỤNG:</p>
+                
+                <p>- Giặt bằng tay để giữ chất lượng, m&agrave;u sắc &amp; độ bền của sản phẩm</p>
+                
+                <p>- Giặt trước khi sử dụng để ko bị d&iacute;nh l&ocirc;ng khi mang do sản phẩm nỉ mới</p>
+                
+                <p>- Giặt mặt trong để bảo quản h&igrave;nh in, th&ecirc;u giặt bằng tay để giữ chất lượng, m&agrave;u sắc &amp; độ bền của sản phẩm</p>
+                
+                <p>_________________</p>
+                
+                <p>FORM &Aacute;O:</p>
+                
+                <p>-Size M: D&agrave;i 58cm</p>
+                
+                <p>-Size M: D&agrave;i 63cm</p>
+                
+                <p>-Size L: D&agrave;i 68cm</p>
+                
+                <p>-Size XL: D&agrave;i 72cm</p>
+                
+                <p>&reg;️ Designed by UNCOOL TEAMS.</p>
+                
+                <p>📎 Instagram: @Deuncoolstudios.</p>
+                
+                <p>AVAILABLE NOW 🛒</p>
+                
+                <p>Mua ngay đi kẻo hết lạnh b&acirc;y giờ #hoodie #hoodiezip #hoodieformrong #aokhoac #aolanh #aohoodiezipdep</p>',
                 'content' => '',
-                'price' => 100000,
+                'price' => 420000,
                 'qty' => 20,
-                'discount' => 80000,
+                'discount' => 320000,
                 'weight' => 1.3,
                 'sku' => '00012',
                 'featured' => true,
@@ -156,14 +181,34 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'id' => 2,
-                'brand_id' => 2,
+                'brand_id' => 1,
                 'product_category_id' => 2,
-                'name' => 'Guangzhou sweater',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor',
+                'name' => 'Áo hoodie nỉ bông DEUNCOOL BASIC ver 1.0 - Màu Grey Light - 100% cotton mềm mịn cho nam nữ - ẢNH THẬT',
+                'description' => '♥️ CHÀO CẬU Ạ ! MẪU HOODIE BÊN SHOP CHỈ CÒN LẺ VÀI CHIẾC - VÀ BÊN SHOP MỚI VỀ MẪU HOODIEZIP BẠN NHA - HOODIEZIP THÌ VẪN SẼ CÓ TAG MŨ VÀ HÌNH IN SAU LƯNG NHƯ ÁO HOODIE CẬU NHA - MẶT TRƯỚC HOODIEZIP SẼ LÀ TRƠN GIỐNG ẢNH Ạ - VÌ HOODIEZIP MỚI VỀ NÊN CHƯA CÓ ẢNH MẪU MONG CẬU THÔNG CẢM Ạ ♥️ CẬU ĐỌC KỸ PHẦN PHÂN LOẠI SẢN PHẨM ĐỂ TRÁNH ĐẶT NHẦM NHA 🧸
+                DEUNCOOL STUDIOS HOODIE - Màu Grey Light
+                Chất liệu : Nỉ cotton 100% (lót bông).
+                Size: M/L/XL. “ Với trường hợp áo chật bạn hãy nhắn tin cho shop để shop hỗ trợ đổi size cho bạn nhé, đừng vội đánh giá sản phẩm, tội shop lắm ạ  🥺“
+                - Năm nay shop dùng dây bản tròn giống trong video nhé ♥️
+                _________________
+                📦  HƯỚNG DẪN SỬ DỤNG: 
+                - Giặt bằng tay để giữ chất lượng, màu sắc & độ bền của sản phẩm 
+                - Giặt trước khi sử dụng để ko bị dính lông khi mang do sản phẩm nỉ mới 
+                - Giặt mặt trong để bảo quản hình in, thêu giặt bằng tay để giữ chất lượng, màu sắc & độ bền của sản phẩm
+                _________________
+                
+                FORM ÁO:             
+                -Size M: Dài 63cm
+                -Size L: Dài 68cm
+                -Size XL: Dài 72cm
+                
+                ®️ Designed by UNCOOL TEAMS.
+                📎 Instagram: @Deuncoolstudios.
+                AVAILABLE NOW
+                🛒 Mua ngay đi kẻo hết lạnh bây giờ ',
                 'content' => null,
-                'price' => 60000,
+                'price' => 420000,
                 'qty' => 20,
-                'discount' => 50000,
+                'discount' => 320000,
                 'weight' => null,
                 'sku' => null,
                 'featured' => true,
@@ -171,7 +216,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'id' => 3,
-                'brand_id' => 3,
+                'brand_id' => 1,
                 'product_category_id' => 2,
                 'name' => 'Guangzhou sweater',
                 'description' => 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor',
@@ -186,7 +231,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'id' => 4,
-                'brand_id' => 4,
+                'brand_id' => 1,
                 'product_category_id' => 1,
                 'name' => 'Microfiber Wool Scarf',
                 'description' => 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor',

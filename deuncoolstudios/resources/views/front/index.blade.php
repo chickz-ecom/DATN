@@ -10,7 +10,7 @@
 
     <section class="hero-section">
         <div class="hero-items owl-carousel">
-            <div class="single-hero-items set-bg" data-setbg="front/img/hero-1.jpg">
+            <div class="single-hero-items set-bg" data-setbg="front/img/banner/banner-1.jpeg">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5">
@@ -34,7 +34,7 @@
                     </div>
                 </div>
             </div>
-            <div class="single-hero-items set-bg" data-setbg="front/img/hero-2.jpg">
+            <div class="single-hero-items set-bg" data-setbg="front/img/banner/banner-2.jpeg">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5">
@@ -58,7 +58,7 @@
                     </div>
                 </div>
             </div>
-            <div class="single-hero-items set-bg" data-setbg="front/img/hero-3.jpg">
+            <div class="single-hero-items set-bg" data-setbg="front/img/banner/banner-3.jpeg">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5">
@@ -128,8 +128,8 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-3">
-                    <div class="product-large set-bg" data-setbg="front/img/products/women-large.jpg">
-                        <h2>Women's</h2>
+                    <div class="product-large set-bg" data-setbg="front/img/t-shirt.jpeg">
+                        <h2 style="color: #000;">T-Shrit</h2>
                         <a href="#">Discover More</a>
                     </div>
                 </div>
@@ -220,8 +220,8 @@
                     </div>
                 </div>
                 <div class="col-lg-3">
-                    <div class="product-large set-bg" data-setbg="front/img/products/man-large.jpg">
-                        <h2>Man's</h2>
+                    <div class="product-large set-bg" data-setbg="front/img/hoddie.jpeg">
+                        <h2>Hoddie</h2>
                         <a href="#">Discover More</a>
                     </div>
                 </div>

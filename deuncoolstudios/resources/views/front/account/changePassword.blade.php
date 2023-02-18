@@ -1,5 +1,5 @@
 @extends('front.layout.master')
-@section('title', 'Manage')
+@section('title', 'Change Password')
 @section('body')
                 <!-- Main -->
                 <div class="app-main__inner">

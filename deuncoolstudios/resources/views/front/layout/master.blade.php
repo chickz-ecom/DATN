@@ -47,7 +47,7 @@
                     </div>
                     <div class="phone-service">
                         <i class="fa fa-phone">
-                            +84 327 770 507
+                            +84 334 496 975
                         </i>
                     </div>
                 </div>
@@ -183,43 +183,17 @@
         </div>
         <div class="nav-item">
             <div class="container">
-                <div class="nav-depart">
-                    <div class="depart-btn">
-                        <i class="ti-menu"></i>
-                        <span>All departments</span>
-                        <ul class="depart-hover">
-                            <li class="active">
-                                <a href="#">Women's Clothing</a>
-                            </li>
-                            <li><a href="#">Men Clothing</a></li>
-                            <li><a href="#">Underwear</a></li>
-                            <li><a href="#">Kid's Clothing</a></li>
-                            <li><a href="#">abc</a></li>
-                            <li><a href="#">def</a></li>
-                            <li><a href="#">gho</a></li>
-                        </ul>
-                    </div>
-                </div>
                 <nav class="nav-menu mobile-menu">
                     <ul>
                         <li class="{{ (request()->segment(1)=='') ? 'active' : '' }}"><a href="/">Home</a></li>
                         <li class="{{ (request()->segment(1)=='shop') ? 'active' : '' }}"><a href="./shop">Shop</a></li>
-                        <li><a href="">Collection</a>
-                            <ul class="dropdown">
-                                <li><a href="">Men's</a></li>
-                                <li><a href="">Women's</a></li>
-                                <li><a href="">Kid's</a></li>
-                            </ul>
-                        </li>
                         <li class="{{ (request()->segment(1)=='blog') ? 'active' : '' }}"><a href="./blog">Blog</a></li>
                         <li class="{{ (request()->segment(1)=='contact') ? 'active' : '' }}"><a href="./contact">Contact</a></li>
                         <li><a href="">Pages</a>
                             <ul class="dropdown">
                                 <li><a href="./account/my-order">My Order</a></li>
-                                <li><a href="blog-details.html">Blog Details</a></li>
                                 <li><a href="./cart">Shopping Cart</a></li>
                                 <li><a href="./checkout">Checkout</a></li>
-                                <li><a href="faq.html">FAQ</a></li>
                                 <li><a href="./register">Register</a></li>
                                 <li><a href="./account/login">Login</a></li>
                             </ul>
@@ -298,9 +272,9 @@
                             </a>
                         </div>
                         <ul>
-                            <li>1A Yet Kieu, Ha Noi</li>
-                            <li>Phone: </li>
-                            <li>Email: </li>
+                            <li>64 Ngõ 59 Mễ Trì, Hà Nội, Việt Nam</li>
+                            <li>Phone: 033 449 6975</li>
+                            <li>Email: deuncoolstudios@gmail.com</li>
                         </ul>
                         <div class="footer-social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
