@@ -121,12 +121,27 @@ class CheckOutController extends Controller
             return redirect('checkout/result')->with('notification', 'Đặt hàng thành công, vui lòng kiểm tra email để xem thông tin chi tiết đơn hàng');
          }
          if($request->payment_type == 'online_payment'){ 
+            // gửi mail
+            if(auth()->user()){
+                $totals = UserCart::select('total')->where('user_id', auth()->user()->id)->get();
+                $total = 0;
+                foreach($totals as $item){
+                    $total += $item->total;
+                }
+                $subtotal = $total;
+            }
+            else{
+                $total = Cart::total();
+                $subtotal = Cart::subtotal();
+            }
+
             // lay url thanh toan
             $data_url = VNPay::vnpay_create_payment([
                 'vnp_TxnRef'=>$order->id, // id don hang
                 'vnp_OrderInfo'=>'Mô tả về đơn hàng ở đây',
-                'vnp_Amount'=>Cart::total()
+                'vnp_Amount'=>$total
             ]);
+            
             //chuyen huong toi url
             return redirect()->to($data_url);
          }
@@ -152,12 +167,24 @@ class CheckOutController extends Controller
                 //send mail
 
                 $order = Order::find($vnp_TxnRef);
-                $total = Order::total();
-                $subtotal = Order::subtotal();
+                if(auth()->user()){
+                    $totals = UserCart::select('total')->where('user_id', auth()->user()->id)->get();
+                    $total = 0;
+                    foreach($totals as $item){
+                        $total += $item->total;
+                    }
+                    $subtotal = $total;
+                }
+                else{
+                    $total = Cart::total();
+                    $subtotal = Cart::subtotal();
+                }
                 $this->sendMail($order, $total, $subtotal);
 
                 //xoa gio hang
-
+                if(auth()->user()){
+                    UserCart::where('user_id', auth()->user()->id)->delete();
+                }
                 Cart::destroy();
 
                 // thong bao thanh cong

@@ -78,7 +78,7 @@ class DatabaseSeeder extends Seeder
                 'user_id' => 3,
                 'title' => 'This was one of our first days in Hawaii last week.',
                 'image' => 'blog-2.jpg',
-                'category' => 'CodeLeanON',
+                'category' => 'Do Quang Tiep',
                 'content' => '',
             ],
             [
@@ -92,7 +92,7 @@ class DatabaseSeeder extends Seeder
                 'user_id' => 3,
                 'title' => 'Happppppy New Year! I know I am a little late on this post',
                 'image' => 'blog-4.jpg',
-                'category' => 'CodeLeanON',
+                'category' => 'Do Quang Tiep',
                 'content' => '',
             ],
             [
@@ -106,7 +106,7 @@ class DatabaseSeeder extends Seeder
                 'user_id' => 3,
                 'title' => 'Writing has always been kind of therapeutic for me',
                 'image' => 'blog-6.jpg',
-                'category' => 'CodeLeanON',
+                'category' => 'Do Quang Tiep',
                 'content' => '',
             ],
         ]);
@@ -134,43 +134,43 @@ class DatabaseSeeder extends Seeder
                 'id' => 1,
                 'brand_id' => 1,
                 'product_category_id' => 3,
-                'name' => 'Áo khoác nỉ form rộng hoodiezip chất liệu nỉ bông siêu ấm DEUNCOOL',
-                'description' => '<p>DEUNCOOL STUDIOS HOODIE</p>
+                'name' => 'Áo khoác nỉ form rộng hoodiezip ',
+                'description' => 'DEUNCOOL STUDIOS HOODIE<br>
 
-                <p>Chất liệu : Nỉ cotton 100% (l&oacute;t b&ocirc;ng).</p>
+                Chất liệu : Nỉ cotton 100% (l&oacute;t b&ocirc;ng).<br>
                 
-                <p>&ldquo; Với trường hợp &aacute;o chật bạn h&atilde;y nhắn tin cho shop để shop hỗ trợ đổi size cho bạn nh&eacute;, đừng vội đ&aacute;nh gi&aacute; sản phẩm, tội shop lắm ạ 🥺&ldquo;</p>
+                &ldquo; Với trường hợp &aacute;o chật bạn h&atilde;y nhắn tin cho shop để shop hỗ trợ đổi size cho bạn nh&eacute;, đừng vội đ&aacute;nh gi&aacute; sản phẩm, tội shop lắm ạ 🥺&ldquo;<br>
                 
-                <p>_________________</p>
+                _________________<br>
                 
-                <p>📦 HƯỚNG DẪN SỬ DỤNG:</p>
+                📦 HƯỚNG DẪN SỬ DỤNG:<br>
                 
-                <p>- Giặt bằng tay để giữ chất lượng, m&agrave;u sắc &amp; độ bền của sản phẩm</p>
+                - Giặt bằng tay để giữ chất lượng, m&agrave;u sắc &amp; độ bền của sản phẩm<br>
                 
-                <p>- Giặt trước khi sử dụng để ko bị d&iacute;nh l&ocirc;ng khi mang do sản phẩm nỉ mới</p>
+                - Giặt trước khi sử dụng để ko bị d&iacute;nh l&ocirc;ng khi mang do sản phẩm nỉ mới<br>
                 
-                <p>- Giặt mặt trong để bảo quản h&igrave;nh in, th&ecirc;u giặt bằng tay để giữ chất lượng, m&agrave;u sắc &amp; độ bền của sản phẩm</p>
+                - Giặt mặt trong để bảo quản h&igrave;nh in, th&ecirc;u giặt bằng tay để giữ chất lượng, m&agrave;u sắc &amp; độ bền của sản phẩm<br>
                 
-                <p>_________________</p>
+                _________________<br>
                 
-                <p>FORM &Aacute;O:</p>
+                FORM &Aacute;O:<br>
                 
-                <p>-Size M: D&agrave;i 58cm</p>
+                -Size M: D&agrave;i 58cm<br>
                 
-                <p>-Size M: D&agrave;i 63cm</p>
+                -Size M: D&agrave;i 63cm<br>
                 
-                <p>-Size L: D&agrave;i 68cm</p>
+                -Size L: D&agrave;i 68cm<br>
                 
-                <p>-Size XL: D&agrave;i 72cm</p>
+                -Size XL: D&agrave;i 72cm<br>
                 
-                <p>&reg;️ Designed by UNCOOL TEAMS.</p>
+                &reg;️ Designed by UNCOOL TEAMS.<br>
                 
-                <p>📎 Instagram: @Deuncoolstudios.</p>
+                📎 Instagram: @Deuncoolstudios.<br>
                 
-                <p>AVAILABLE NOW 🛒</p>
+                AVAILABLE NOW 🛒<br>
                 
-                <p>Mua ngay đi kẻo hết lạnh b&acirc;y giờ #hoodie #hoodiezip #hoodieformrong #aokhoac #aolanh #aohoodiezipdep</p>',
-                'content' => '',
+                Mua ngay đi kẻo hết lạnh b&acirc;y giờ #hoodie #hoodiezip #hoodieformrong #aokhoac #aolanh #aohoodiezipdep<br>',
+                'content' => 'Chất liệu nỉ bông siêu ấm DEUNCOOL',
                 'price' => 420000,
                 'qty' => 20,
                 'discount' => 320000,
@@ -183,49 +183,107 @@ class DatabaseSeeder extends Seeder
                 'id' => 2,
                 'brand_id' => 1,
                 'product_category_id' => 2,
-                'name' => 'Áo hoodie nỉ bông DEUNCOOL BASIC ver 1.0 - Màu Grey Light - 100% cotton mềm mịn cho nam nữ - ẢNH THẬT',
-                'description' => '♥️ CHÀO CẬU Ạ ! MẪU HOODIE BÊN SHOP CHỈ CÒN LẺ VÀI CHIẾC - VÀ BÊN SHOP MỚI VỀ MẪU HOODIEZIP BẠN NHA - HOODIEZIP THÌ VẪN SẼ CÓ TAG MŨ VÀ HÌNH IN SAU LƯNG NHƯ ÁO HOODIE CẬU NHA - MẶT TRƯỚC HOODIEZIP SẼ LÀ TRƠN GIỐNG ẢNH Ạ - VÌ HOODIEZIP MỚI VỀ NÊN CHƯA CÓ ẢNH MẪU MONG CẬU THÔNG CẢM Ạ ♥️ CẬU ĐỌC KỸ PHẦN PHÂN LOẠI SẢN PHẨM ĐỂ TRÁNH ĐẶT NHẦM NHA 🧸
-                DEUNCOOL STUDIOS HOODIE - Màu Grey Light
-                Chất liệu : Nỉ cotton 100% (lót bông).
-                Size: M/L/XL. “ Với trường hợp áo chật bạn hãy nhắn tin cho shop để shop hỗ trợ đổi size cho bạn nhé, đừng vội đánh giá sản phẩm, tội shop lắm ạ  🥺“
-                - Năm nay shop dùng dây bản tròn giống trong video nhé ♥️
-                _________________
-                📦  HƯỚNG DẪN SỬ DỤNG: 
-                - Giặt bằng tay để giữ chất lượng, màu sắc & độ bền của sản phẩm 
-                - Giặt trước khi sử dụng để ko bị dính lông khi mang do sản phẩm nỉ mới 
-                - Giặt mặt trong để bảo quản hình in, thêu giặt bằng tay để giữ chất lượng, màu sắc & độ bền của sản phẩm
-                _________________
+                'name'=>'Áo hoodie nỉ bông DEUNCOOL BASIC ver 1.0 ',
+                'description' => '&hearts;️ CH&Agrave;O CẬU Ạ !<br>
+
+                MẪU HOODIE B&Ecirc;N SHOP CHỈ C&Ograve;N LẺ V&Agrave;I CHIẾC - V&Agrave; B&Ecirc;N SHOP MỚI VỀ MẪU HOODIEZIP BẠN NHA - HOODIEZIP TH&Igrave; VẪN SẼ C&Oacute; TAG MŨ V&Agrave; H&Igrave;NH IN SAU LƯNG NHƯ &Aacute;O HOODIE CẬU NHA - MẶT TRƯỚC HOODIEZIP SẼ L&Agrave; TRƠN GIỐNG ẢNH Ạ - V&Igrave; HOODIEZIP MỚI VỀ N&Ecirc;N CHƯA C&Oacute; ẢNH MẪU MONG CẬU TH&Ocirc;NG CẢM Ạ &hearts;️ CẬU ĐỌC KỸ PHẦN PH&Acirc;N LOẠI SẢN PHẨM ĐỂ TR&Aacute;NH ĐẶT NHẦM NHA<br>
                 
-                FORM ÁO:             
-                -Size M: Dài 63cm
-                -Size L: Dài 68cm
-                -Size XL: Dài 72cm
+                🧸 DEUNCOOL STUDIOS HOODIE<br>
                 
-                ®️ Designed by UNCOOL TEAMS.
-                📎 Instagram: @Deuncoolstudios.
-                AVAILABLE NOW
-                🛒 Mua ngay đi kẻo hết lạnh bây giờ ',
-                'content' => null,
+                - M&agrave;u Grey Light Chất liệu : Nỉ cotton 100% (l&oacute;t b&ocirc;ng).<br>
+                
+                Size: M/L/XL.<br>
+                
+                &ldquo; Với trường hợp &aacute;o chật bạn h&atilde;y nhắn tin cho shop để shop hỗ trợ đổi size cho bạn nh&eacute;, đừng vội đ&aacute;nh gi&aacute; sản phẩm, tội shop lắm ạ 🥺&ldquo;<br>
+                
+                - Năm nay shop d&ugrave;ng d&acirc;y bản tr&ograve;n giống trong video nh&eacute; &hearts;️<br>
+                
+                _________________<br>
+                
+                📦 HƯỚNG DẪN SỬ DỤNG:<br>
+                
+                - Giặt bằng tay để giữ chất lượng, m&agrave;u sắc &amp; độ bền của sản phẩm<br>
+                
+                - Giặt trước khi sử dụng để ko bị d&iacute;nh l&ocirc;ng khi mang do sản phẩm nỉ mới<br>
+                
+                - Giặt mặt trong để bảo quản h&igrave;nh in, th&ecirc;u giặt bằng tay để giữ chất lượng, m&agrave;u sắc &amp; độ bền của sản phẩm<br>
+                
+                _________________<br>
+                
+                FORM &Aacute;O:<br>
+                
+                -Size M: D&agrave;i 63cm<br>
+                
+                -Size L: D&agrave;i 68cm<br>
+                
+                -Size XL: D&agrave;i 72cm<br>
+                
+                &reg;️ Designed by UNCOOL TEAMS.<br>
+                
+                📎 Instagram: @Deuncoolstudios.<br>
+                
+                AVAILABLE NOW 🛒<br>
+                
+                Mua ngay đi kẻo hết lạnh b&acirc;y giờ<br>',
+                'content' => '- Màu Grey Light - 100% cotton mềm mịn cho nam nữ - ẢNH THẬT',
                 'price' => 420000,
                 'qty' => 20,
                 'discount' => 320000,
-                'weight' => null,
-                'sku' => null,
+                'weight' => 1.3,
+                'sku' => 00022,
                 'featured' => true,
                 'tag' => 'Clothing',
             ],
             [
                 'id' => 3,
                 'brand_id' => 1,
-                'product_category_id' => 2,
-                'name' => 'Guangzhou sweater',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor',
-                'content' => null,
-                'price' => 100000,
+                'product_category_id' => 1,
+                'name' => 'Áo thun tay lỡ form rộng DEUNCOOL Basic Tee Drop 1.0 ',
+                'description' => 'DEUNCOOL BASIC TEE<br>
+
+                - M&agrave;u Trắng Chất liệu : Cotton 100%<br>
+                
+                Size: L/XL.<br>
+                
+                _________________<br>
+                
+                FORM &Aacute;O:<br>
+                
+                - Size L: Từ 1m50 - 1m65<br>
+                
+                - Size XL: Từ 1m65 - 1m85<br>
+                
+                _________________<br>
+                
+                📦 HƯỚNG DẪN SỬ DỤNG:<br>
+                
+                - Giặt bằng tay để giữ chất lượng, m&agrave;u sắc &amp; độ bền của sản phẩm<br>
+                
+                - Giặt trước khi sử dụng để ko bị d&iacute;nh l&ocirc;ng khi mang do sản phẩm vải mới<br>
+                
+                - Giặt mặt trong để bảo quản h&igrave;nh in, th&ecirc;u giặt bằng tay để giữ chất lượng, m&agrave;u sắc &amp; độ bền của sản phẩm &reg;️ Designed by UNCOOL TEAMS. 📎 Instagram: @Deuncoolstudios. 📌CH&Iacute;NH S&Aacute;CH ĐỔI H&Agrave;NG:<br>
+                
+                - Hỗ trợ đổi h&agrave;ng trong v&ograve;ng 3 ng&agrave;y t&iacute;nh từ ng&agrave;y nhận được sản phẩm.<br>
+                
+                - Kh&ocirc;ng &aacute;p dụng với c&aacute;c sản phẩm khi mua flashsale.<br>
+                
+                - Điều kiện:<br>
+                
+                + Sản phẩm c&oacute; lỗi từ nh&agrave; sản xuất (Phản hồi shop k&egrave;m video mở h&agrave;ng ngay khi nhận sản phẩm)<br>
+                
+                + Chỉ hỗ trợ đổi h&agrave;ng khi sản phẩm chưa được sử dụng c&ograve;n nguy&ecirc;n tem v&agrave; tag gi&aacute; của cửa h&agrave;ng<br>
+                
+                + Chỉ &aacute;p dụng đổi đổi với sản phẩm mua nguy&ecirc;n gi&aacute; v&agrave; chỉ hỗ trợ đổi 01 lần duy nhất.<br>
+                
+                + Sản phẩm muốn đổi c&oacute; gi&aacute; tương đương hoặc lớn hơn<br>
+                
+                AVAILABLE NOW 🛒 Direct me: 0334496975<br>',
+                'content' => "- Màu Trắng - In UNC.STUDIOS",
+                'price' => 235000,
                 'qty' => 20,
-                'discount' => 80000,
-                'weight' => null,
-                'sku' => null,
+                'discount' => 149000,
+                'weight' => 0.4,
+                'sku' => '00013',
                 'featured' => true,
                 'tag' => 'Clothing',
             ],
@@ -233,138 +291,683 @@ class DatabaseSeeder extends Seeder
                 'id' => 4,
                 'brand_id' => 1,
                 'product_category_id' => 1,
-                'name' => 'Microfiber Wool Scarf',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor',
-                'content' => null,
-                'price' => 120000,
+                'name' => 'Áo thun tay lỡ form rộng DEUNCOOL Basic Tee Drop 1.0 ',
+                'description' => 'DEUNCOOL BASIC TEE<br>
+
+                - M&agrave;u đen Chất liệu : Cotton 100%<br>
+                
+                Size: L/XL.<br>
+                
+                _________________<br>
+                
+                FORM &Aacute;O:<br>
+                
+                - Size L: Từ 1m50 - 1m65<br>
+                
+                - Size XL: Từ 1m65 - 1m85<br>
+                
+                _________________<br>
+                
+                📦 HƯỚNG DẪN SỬ DỤNG:<br>
+                
+                - Giặt bằng tay để giữ chất lượng, m&agrave;u sắc &amp; độ bền của sản phẩm<br>
+                
+                - Giặt trước khi sử dụng để ko bị d&iacute;nh l&ocirc;ng khi mang do sản phẩm vải mới<br>
+                
+                - Giặt mặt trong để bảo quản h&igrave;nh in, th&ecirc;u giặt bằng tay để giữ chất lượng, m&agrave;u sắc &amp; độ bền của sản phẩm &reg;️ Designed by UNCOOL TEAMS. 📎 Instagram: @Deuncoolstudios. 📌CH&Iacute;NH S&Aacute;CH ĐỔI H&Agrave;NG:<br>
+                
+                - Hỗ trợ đổi h&agrave;ng trong v&ograve;ng 3 ng&agrave;y t&iacute;nh từ ng&agrave;y nhận được sản phẩm.<br>
+                
+                - Kh&ocirc;ng &aacute;p dụng với c&aacute;c sản phẩm khi mua flashsale.<br>
+                
+                - Điều kiện:<br>
+                
+                + Sản phẩm c&oacute; lỗi từ nh&agrave; sản xuất (Phản hồi shop k&egrave;m video mở h&agrave;ng ngay khi nhận sản phẩm)<br>
+                
+                + Chỉ hỗ trợ đổi h&agrave;ng khi sản phẩm chưa được sử dụng c&ograve;n nguy&ecirc;n tem v&agrave; tag gi&aacute; của cửa h&agrave;ng<br>
+                
+                + Chỉ &aacute;p dụng đổi đổi với sản phẩm mua nguy&ecirc;n gi&aacute; v&agrave; chỉ hỗ trợ đổi 01 lần duy nhất.<br>
+                
+                + Sản phẩm muốn đổi c&oacute; gi&aacute; tương đương hoặc lớn hơn<br>
+                
+                AVAILABLE NOW 🛒 Direct me: 0334496975<br>',
+                'content' => '- Màu Trắng Đen - Logo Signature',
+                'price' => 215000,
                 'qty' => 20,
-                'discount' => 80000,
-                'weight' => null,
-                'sku' => null,
+                'discount' => 149000,
+                'weight' => 0.3,
+                'sku' => 000021,
                 'featured' => true,
-                'tag' => 'Accessories',
+                'tag' => 'Clothing',
             ],
             [
                 'id' => 5,
                 'brand_id' => 1,
-                'product_category_id' => 3,
-                'name' => "Men's Painted Hat",
-                'description' => 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor',
+                'product_category_id' => 1,
+                'name' => "TRAP DEUNCOOL STUDIOS -  [ DT02 ]",
+                'description' => 'DEUNCOOL BASIC TEE<br>
+
+                - M&agrave;u đen Chất liệu : Cotton 100%<br>
+                
+                Size: L/XL.<br>
+                
+                _________________<br>
+                
+                FORM &Aacute;O:<br>
+                
+                - Size L: Từ 1m50 - 1m65<br>
+                
+                - Size XL: Từ 1m65 - 1m85<br>
+                
+                _________________<br>
+                
+                📦 HƯỚNG DẪN SỬ DỤNG:<br>
+                
+                - Giặt bằng tay để giữ chất lượng, m&agrave;u sắc &amp; độ bền của sản phẩm<br>
+                
+                - Giặt trước khi sử dụng để ko bị d&iacute;nh l&ocirc;ng khi mang do sản phẩm vải mới<br>
+                
+                - Giặt mặt trong để bảo quản h&igrave;nh in, th&ecirc;u giặt bằng tay để giữ chất lượng, m&agrave;u sắc &amp; độ bền của sản phẩm &reg;️ Designed by UNCOOL TEAMS. 📎 Instagram: @Deuncoolstudios. 📌CH&Iacute;NH S&Aacute;CH ĐỔI H&Agrave;NG:<br>
+                
+                - Hỗ trợ đổi h&agrave;ng trong v&ograve;ng 3 ng&agrave;y t&iacute;nh từ ng&agrave;y nhận được sản phẩm.<br>
+                
+                - Kh&ocirc;ng &aacute;p dụng với c&aacute;c sản phẩm khi mua flashsale.<br>
+                
+                - Điều kiện:<br>
+                
+                + Sản phẩm c&oacute; lỗi từ nh&agrave; sản xuất (Phản hồi shop k&egrave;m video mở h&agrave;ng ngay khi nhận sản phẩm)<br>
+                
+                + Chỉ hỗ trợ đổi h&agrave;ng khi sản phẩm chưa được sử dụng c&ograve;n nguy&ecirc;n tem v&agrave; tag gi&aacute; của cửa h&agrave;ng<br>
+                
+                + Chỉ &aacute;p dụng đổi đổi với sản phẩm mua nguy&ecirc;n gi&aacute; v&agrave; chỉ hỗ trợ đổi 01 lần duy nhất.<br>
+                
+                + Sản phẩm muốn đổi c&oacute; gi&aacute; tương đương hoặc lớn hơn<br>
+                
+                AVAILABLE NOW 🛒 Direct me: 0334496975<br>',
                 'content' => null,
-                'price' => 200000,
+                'price' => 250000,
                 'qty' => 20,
-                'discount' => 100000,
-                'weight' => null,
-                'sku' => null,
-                'featured' => false,
-                'tag' => 'Accessories',
+                'discount' => 179000,
+                'weight' => 0.3,
+                'sku' => 000213,
+                'featured' => true,
+                'tag' => 'Clothing',
             ],
             [
                 'id' => 6,
                 'brand_id' => 1,
-                'product_category_id' => 2,
-                'name' => 'Converse Shoes',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor',
+                'product_category_id' => 1,
+                'name' => 'Áo Thun Tay Lỡ Deuncool Basic Organ Form Rộng Drop 2.0',
+                'description' => 'DEUNCOOL BASIC TEE - Màu Trắng / Đen<br>
+
+                - M&agrave;u đen Chất liệu : Cotton 100%<br>
+                
+                Size: L/XL.<br>
+                
+                _________________<br>
+                
+                FORM &Aacute;O:<br>
+                
+                - Size L: Từ 1m50 - 1m65<br>
+                
+                - Size XL: Từ 1m65 - 1m85<br>
+                
+                _________________<br>
+                
+                📦 HƯỚNG DẪN SỬ DỤNG:<br>
+                
+                - Giặt bằng tay để giữ chất lượng, m&agrave;u sắc &amp; độ bền của sản phẩm<br>
+                
+                - Giặt trước khi sử dụng để ko bị d&iacute;nh l&ocirc;ng khi mang do sản phẩm vải mới<br>
+                
+                - Giặt mặt trong để bảo quản h&igrave;nh in, th&ecirc;u giặt bằng tay để giữ chất lượng, m&agrave;u sắc &amp; độ bền của sản phẩm &reg;️ Designed by UNCOOL TEAMS. 📎 Instagram: @Deuncoolstudios. 📌CH&Iacute;NH S&Aacute;CH ĐỔI H&Agrave;NG:<br>
+                
+                - Hỗ trợ đổi h&agrave;ng trong v&ograve;ng 3 ng&agrave;y t&iacute;nh từ ng&agrave;y nhận được sản phẩm.<br>
+                
+                - Kh&ocirc;ng &aacute;p dụng với c&aacute;c sản phẩm khi mua flashsale.<br>
+                
+                - Điều kiện:<br>
+                
+                + Sản phẩm c&oacute; lỗi từ nh&agrave; sản xuất (Phản hồi shop k&egrave;m video mở h&agrave;ng ngay khi nhận sản phẩm)<br>
+                
+                + Chỉ hỗ trợ đổi h&agrave;ng khi sản phẩm chưa được sử dụng c&ograve;n nguy&ecirc;n tem v&agrave; tag gi&aacute; của cửa h&agrave;ng<br>
+                
+                + Chỉ &aacute;p dụng đổi đổi với sản phẩm mua nguy&ecirc;n gi&aacute; v&agrave; chỉ hỗ trợ đổi 01 lần duy nhất.<br>
+                
+                + Sản phẩm muốn đổi c&oacute; gi&aacute; tương đương hoặc lớn hơn<br>
+                
+                AVAILABLE NOW 🛒 Direct me: 0334496975<br>',
                 'content' => null,
-                'price' => 330000,
+                'price' => 250000,
                 'qty' => 20,
-                'discount' => 280000,
-                'weight' => null,
-                'sku' => null,
+                'discount' => 179000,
+                'weight' => 0.3,
+                'sku' => 00210,
                 'featured' => true,
                 'tag' => 'Clothing',
             ],
             [
                 'id' => 7,
                 'brand_id' => 1,
-                'product_category_id' => 1,
-                'name' => 'Pure Pineapple',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor',
-                'content' => null,
-                'price' => 1000000,
+                'product_category_id' => 2,
+                'name' => 'Áo khoác nỉ xám Basic ver 2.0 ',
+                'description' => 'Hoodie Zip Basic ®️ available<br>
+                Grey <br>
+                Chất liệu : Nỉ cotton 100% (lót bông).<br>
+                Size: Oversize<br>
+                _________________<br>
+                📦  HƯỚNG DẪN SỬ DỤNG: <br>
+                - Giặt bằng tay để giữ chất lượng, màu sắc & độ bền của sản phẩm <br>
+                - Giặt trước khi sử dụng để ko bị dính lông khi mang do sản phẩm nỉ mới <br>
+                - Giặt mặt trong để bảo quản hình in, thêu giặt bằng tay để giữ chất lượng, màu sắc & độ bền của sản phẩm<br>
+                _________________<br>
+                
+                FORM ÁO:<br>         
+                - Dài 72cm<br>
+                - Form dưới 70kg<br>
+                
+                ®️ Designed by UNCOOL TEAMS.<br>
+                📎 Instagram: @Deuncoolstudios.<br>
+                AVAILABLE NOW<br>
+                🛒 Mua ngay đi kẻo hết lạnh bây giờ.',
+                'content' => 'Mũ 2 lớp form rộng oversize DEUNCOOL BASIC',
+                'price' => 380000,
                 'qty' => 20,
-                'discount' => 400000,
-                'weight' => null,
-                'sku' => null,
+                'discount' => null,
+                'weight' => 1.6,
+                'sku' => 02134,
                 'featured' => true,
-                'tag' => 'HandBag',
+                'tag' => 'Clothing',
             ],
             [
                 'id' => 8,
                 'brand_id' => 1,
-                'product_category_id' => 1,
-                'name' => '2 Layer Windbreaker',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor',
+                'product_category_id' => 2,
+                'name' => 'Áo hoodie basic form rộng DEUNCOOL VER 2',
+                'description' => 'Hoodie Zip Basic ®️ available<br>
+                Grey <br>
+                Chất liệu : Nỉ cotton 100% (lót bông).<br>
+                Size: Oversize<br>
+                _________________<br>
+                📦  HƯỚNG DẪN SỬ DỤNG: <br>
+                - Giặt bằng tay để giữ chất lượng, màu sắc & độ bền của sản phẩm <br>
+                - Giặt trước khi sử dụng để ko bị dính lông khi mang do sản phẩm nỉ mới <br>
+                - Giặt mặt trong để bảo quản hình in, thêu giặt bằng tay để giữ chất lượng, màu sắc & độ bền của sản phẩm<br>
+                _________________<br>
+                
+                FORM ÁO:<br>   
+                - Dài 72cm<br>
+                - Form dưới 70kg<br>
+                
+                ®️ Designed by UNCOOL TEAMS.<br>
+                📎 Instagram: @Deuncoolstudios.<br>
+                AVAILABLE NOW<br>
+                🛒 Mua ngay đi kẻo hết lạnh bây giờ<br>',
                 'content' => null,
-                'price' => 100000,
+                'price' => 380000,
                 'qty' => 20,
-                'discount' => 70000,
-                'weight' => null,
-                'sku' => null,
+                'discount' => null,
+                'weight' => 1.5,
+                'sku' => 21314,
                 'featured' => true,
                 'tag' => 'Clothing',
             ],
             [
                 'id' => 9,
                 'brand_id' => 1,
-                'product_category_id' => 1,
-                'name' => 'Converse Shoes',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor sit amet, consectetur adipisicing elit, sed do mod tempor',
-                'content' => null,
-                'price' => 100000,
+                'product_category_id' => 2,
+                'name' => 'Áo hoodie nỉ bông DEUNCOOL BASIC ver 1.0',
+                'description' => 'DEUNCOOL STUDIOS HOODIE - Màu Black<br>
+                Chất liệu : Nỉ cotton 100% (lót bông).<br>
+                Size: M/L/XL.<br>
+                _________________<br>
+                📦  HƯỚNG DẪN SỬ DỤNG: <br>
+                - Giặt bằng tay để giữ chất lượng, màu sắc & độ bền của sản phẩm <br>
+                - Giặt trước khi sử dụng để ko bị dính lông khi mang do sản phẩm nỉ mới <br>
+                - Giặt mặt trong để bảo quản hình in, thêu giặt bằng tay để giữ chất lượng, màu sắc & độ bền của sản phẩm<br>
+                _________________<br>
+                
+                FORM ÁO:    <br>         
+                -Size M: Ngang 60cm, Dài 65cm<br>
+                -Size L: Ngang 64cm, Dài 67cm<br>
+                -Size XL: Ngang 70cm, Dài 74cm<br>
+                
+                ®️ Designed by UNCOOL TEAMS.<br>
+                📎 Instagram: @Deuncoolstudios.<br>
+                AVAILABLE NOW<br>
+                🛒 Mua ngay đi kẻo hết lạnh bây giờ<br>',
+                'content' => 'Màu Black - 100% cotton mềm mịn cho nam nữ - ẢNH THẬT',
+                'price' => 420000,
                 'qty' => 20,
-                'discount' => 80000,
-                'weight' => null,
-                'sku' => null,
+                'discount' => null,
+                'weight' => 1.3,
+                'sku' => 213124,
                 'featured' => true,
-                'tag' => 'Shoes',
+                'tag' => 'Clothing',
+            ],
+            [
+                'id' => 10,
+                'brand_id' => 1,
+                'product_category_id' => 2,
+                'name' => 'Áo hoodie nỉ bông DEUNCOOL BASIC ver 1.0',
+                'description' => 'Áo Hoodie Màu Xanh Lục Cực Lạ, Chất Liêu Nỉ Bông Ấm Áp, Form Rộng Rớt Vai<br>
+                _________________<br>
+                
+                Chất liệu : Nỉ bông cotton dày mịn, ấm <br>
+                Kích cỡ : M, L, XL<br>
+                Được thiết kế độc đáo cho người mặc, khi mặc lên cảm giác mát mẻ thoải mái tự tin sải bước khi đi ra ngoài, đi chơi du lịch<br>
+                _________________<br>
+                
+                CAM KẾT CỦA SHOP:✨<br>
+                + Cam kết 100% đổi hàng do lỗi shop và lỗi sản phẩm.<br>
+                + Nếu có bất cứ điều gì  không hài lòng về sản phẩm, khách vui lòng liên hệ với shop trước khi đánh giá shop nhé. Shop sẽ sắp xếp đổi, trả hàng hoặc hoàn tiền cho khách ạ!<br>
+                + Mọi người nhớ theo dõi shop để cập nhật mẫu mới và ưu đãi nhanh nhất nha! 💓<br>
+                
+                ®️ Designed by UNCOOL TEAMS.<br>
+                📎 Instagram: @Deuncoolstudios.<br>
+                AVAILABLE NOW<br>
+                
+                #sweater #áo_sweater #áosweaternam #áosweaternữ #áosweaterunisex #áosweaterrộng #áo_sweater_form_rộng #áo_sweater_đẹp #áo_sweater_nữ_đẹp #hoodie #áo_hoodie #áo_hoodie_nam #áo_hoodie_nữ #áo_hoodie_unisex #áo_hoodie_rộng #áo_hoodie_form_rộng #áo_hoodie_đẹp #áo_hoodie_nữ_đẹp #áo_nỉ<br>',
+                'content' => 'Màu Green Light - 100% cotton mềm mịn cho nam nữ - ẢNH THẬT',
+                'price' => 400000,
+                'qty' => 20,
+                'discount' => null,
+                'weight' => 1.3,
+                'sku' => 213124,
+                'featured' => true,
+                'tag' => 'Clothing',
+            ],
+            [
+                'id' => 11,
+                'brand_id' => 1,
+                'product_category_id' => 2,
+                'name' => 'Áo hoodie nỉ bông DEUNCOOL BASIC ver 1.0',
+                'description' => 'Áo Hoodie Màu Xanh Lục Cực Lạ, Chất Liêu Nỉ Bông Ấm Áp, Form Rộng Rớt Vai<br>
+                _________________<br>
+                
+                Chất liệu : Nỉ bông cotton dày mịn, ấm <br>
+                Kích cỡ : M, L, XL<br>
+                Được thiết kế độc đáo cho người mặc, khi mặc lên cảm giác mát mẻ thoải mái tự tin sải bước khi đi ra ngoài, đi chơi du lịch<br>
+                _________________<br>
+                
+                CAM KẾT CỦA SHOP:✨<br>
+                + Cam kết 100% đổi hàng do lỗi shop và lỗi sản phẩm.<br>
+                + Nếu có bất cứ điều gì  không hài lòng về sản phẩm, khách vui lòng liên hệ với shop trước khi đánh giá shop nhé. Shop sẽ sắp xếp đổi, trả hàng hoặc hoàn tiền cho khách ạ!<br>
+                + Mọi người nhớ theo dõi shop để cập nhật mẫu mới và ưu đãi nhanh nhất nha! 💓<br>
+                
+                ®️ Designed by UNCOOL TEAMS.<br>
+                📎 Instagram: @Deuncoolstudios.<br>
+                AVAILABLE NOW<br>
+                
+                #sweater #áo_sweater #áosweaternam #áosweaternữ #áosweaterunisex #áosweaterrộng #áo_sweater_form_rộng #áo_sweater_đẹp #áo_sweater_nữ_đẹp #hoodie #áo_hoodie #áo_hoodie_nam #áo_hoodie_nữ #áo_hoodie_unisex #áo_hoodie_rộng #áo_hoodie_form_rộng #áo_hoodie_đẹp #áo_hoodie_nữ_đẹp #áo_nỉ<br>',
+                'content' => 'Màu Beige Light - 100% cotton mềm mịn cho nam nữ',
+                'price' => 400000,
+                'qty' => 20,
+                'discount' => null,
+                'weight' => 1.3,
+                'sku' => 213124,
+                'featured' => true,
+                'tag' => 'Clothing',
+            ],
+            [
+                'id' => 12,
+                'brand_id' => 1,
+                'product_category_id' => 2,
+                'name' => 'Áo hoodie Đỏ Tết DEUNCOOL BASIC ver 1.0',
+                'description' => 'DEUNCOOL STUDIOS HOODIE - Màu Red Cherry<br>
+                Chất liệu : Nỉ cotton 100% (lót bông).<br>
+                Size: M/L/XL.<br>
+                _________________<br>
+                📦  HƯỚNG DẪN SỬ DỤNG: <br>
+                - Giặt bằng tay để giữ chất lượng, màu sắc & độ bền của sản phẩm <br>
+                - Giặt trước khi sử dụng để ko bị dính lông khi mang do sản phẩm nỉ mới <br>
+                - Giặt mặt trong để bảo quản hình in, thêu giặt bằng tay để giữ chất lượng, màu sắc & độ bền của sản phẩm<br>
+                _________________<br>
+                
+                FORM ÁO:<br>   
+                -Size M: Ngang 60cm, Dài 65cm<br>
+                -Size L: Ngang 64cm, Dài 67cm<br>
+                -Size XL: Ngang 70cm, Dài 74cm<br>
+                ®️ Designed by UNCOOL TEAMS.<br>
+                📎 Instagram: @Deuncoolstudios.<br>
+                AVAILABLE NOW<br>
+                🛒 Mua ngay đi kẻo hết lạnh bây giờ<br>',
+                'content' => 'Màu Red Cherry - 100% cotton mềm mịn cho nam nữ ',
+                'price' => 420000,
+                'qty' => 20,
+                'discount' => null,
+                'weight' => 1.3,
+                'sku' => 213124,
+                'featured' => true,
+                'tag' => 'Clothing',
             ],
         ]);
 
         DB::table('product_images')->insert([
             [
                 'product_id' => 1,
-                'path' => 'product-1.jpg',
+                'path' => 'product-1.jpeg',
             ],
             [
                 'product_id' => 1,
-                'path' => 'product-1-1.jpg',
+                'path' => 'product-1-1.jpeg',
             ],
             [
                 'product_id' => 1,
-                'path' => 'product-1-2.jpg',
+                'path' => 'product-1-2.jpeg',
+            ],
+            [
+                'product_id' => 1,
+                'path' => 'product-1-3.jpeg',
             ],
             [
                 'product_id' => 2,
-                'path' => 'product-2.jpg',
+                'path' => 'product-2.jpeg',
+            ],
+            [
+                'product_id' => 2,
+                'path' => 'product-2-1.jpeg',
+            ],
+            [
+                'product_id' => 2,
+                'path' => 'product-2-2.jpeg',
+            ],
+            [
+                'product_id' => 2,
+                'path' => 'product-3.jpeg',
+            ],
+            [
+                'product_id' => 2,
+                'path' => 'product-2-4.jpeg',
+            ],
+            [
+                'product_id' => 2,
+                'path' => 'product-2-5.jpeg',
+            ],
+
+            [
+                'product_id' => 3,
+                'path' => 'product-3.jpeg',
             ],
             [
                 'product_id' => 3,
-                'path' => 'product-3.jpg',
+                'path' => 'product-3-1.jpeg',
+            ],
+            [
+                'product_id' => 3,
+                'path' => 'product-3-2.jpeg',
+            ],
+            [
+                'product_id' => 3,
+                'path' => 'product-3-3.jpeg',
+            ],
+            [
+                'product_id' => 3,
+                'path' => 'product-3-4.jpeg',
+            ],
+            [
+                'product_id' => 3,
+                'path' => 'product-3-5.jpeg',
             ],
             [
                 'product_id' => 4,
-                'path' => 'product-4.jpg',
+                'path' => 'product-4.jpeg',
+            ],
+            [
+                'product_id' => 4,
+                'path' => 'product-4-1.jpeg',
+            ],
+            [
+                'product_id' => 4,
+                'path' => 'product-4-2.jpeg',
             ],
             [
                 'product_id' => 5,
-                'path' => 'product-5.jpg',
+                'path' => 'product-5.jpeg',
+            ],
+            [
+                'product_id' => 5,
+                'path' => 'product-5-1.jpeg',
+            ],
+            [
+                'product_id' => 5,
+                'path' => 'product-5-2.jpeg',
+            ],
+            [
+                'product_id' => 5,
+                'path' => 'product-5-3.jpeg',
+            ],
+            [
+                'product_id' => 5,
+                'path' => 'product-5-4.jpeg',
+            ],
+            [
+                'product_id' => 5,
+                'path' => 'product-5-5.jpeg',
+            ],
+            [
+                'product_id' => 5,
+                'path' => 'product-5-6.jpeg',
             ],
             [
                 'product_id' => 6,
-                'path' => 'product-6.jpg',
+                'path' => 'product-6.jpeg',
+            ],
+            [
+                'product_id' => 6,
+                'path' => 'product-6-1.jpeg',
+            ],
+            [
+                'product_id' => 6,
+                'path' => 'product-6-2.jpeg',
+            ],
+            [
+                'product_id' => 6,
+                'path' => 'product-6-3.jpeg',
+            ],
+            [
+                'product_id' => 6,
+                'path' => 'product-6-4.jpeg',
+            ],
+            [
+                'product_id' => 6,
+                'path' => 'product-6-5.jpeg',
+            ],
+            [
+                'product_id' => 6,
+                'path' => 'product-6-6.jpeg',
+            ],
+            [
+                'product_id' => 6,
+                'path' => 'product-6-7.jpeg',
+            ],
+            [
+                'product_id' => 6,
+                'path' => 'product-6-8.jpeg',
             ],
             [
                 'product_id' => 7,
-                'path' => 'product-7.jpg',
+                'path' => 'product-7.jpeg',
+            ],
+            [
+                'product_id' => 7,
+                'path' => 'product-7-1.jpeg',
+            ],
+            [
+                'product_id' => 7,
+                'path' => 'product-7-2.jpeg',
+            ],
+            [
+                'product_id' => 7,
+                'path' => 'product-7-3.jpeg',
+            ],
+            [
+                'product_id' => 7,
+                'path' => 'product-7-4.jpeg',
+            ],
+            [
+                'product_id' => 7,
+                'path' => 'product-7-5.jpeg',
+            ],
+            [
+                'product_id' => 7,
+                'path' => 'product-7-6.jpeg',
+            ],
+            [
+                'product_id' => 7,
+                'path' => 'product-7-7.jpeg',
+            ],
+            [
+                'product_id' => 7,
+                'path' => 'product-7-8.jpeg',
             ],
             [
                 'product_id' => 8,
-                'path' => 'product-8.jpg',
+                'path' => 'product-8.jpeg',
+            ],
+            [
+                'product_id' => 8,
+                'path' => 'product-8-1.jpeg',
+            ],
+            [
+                'product_id' => 8,
+                'path' => 'product-8-2.jpeg',
+            ],
+            [
+                'product_id' => 8,
+                'path' => 'product-8-3.jpeg',
+            ],
+            [
+                'product_id' => 8,
+                'path' => 'product-8-4.jpeg',
+            ],
+            [
+                'product_id' => 8,
+                'path' => 'product-8-5.jpeg',
+            ],
+            [
+                'product_id' => 8,
+                'path' => 'product-8-6.jpeg',
+            ],
+            [
+                'product_id' => 8,
+                'path' => 'product-8-7.jpeg',
+            ],
+            [
+                'product_id' => 8,
+                'path' => 'product-8-8jpeg',
             ],
             [
                 'product_id' => 9,
-                'path' => 'product-9.jpg',
+                'path' => 'product-9.jpeg',
+            ],
+            [
+                'product_id' => 9,
+                'path' => 'product-9-1.jpeg',
+            ],
+            [
+                'product_id' => 9,
+                'path' => 'product-9-2.jpeg',
+            ],
+            [
+                'product_id' => 9,
+                'path' => 'product-9-3.jpeg',
+            ],
+            [
+                'product_id' => 9,
+                'path' => 'product-9-4.jpeg',
+            ],
+            [
+                'product_id' => 9,
+                'path' => 'product-9-5.jpeg',
+            ],
+            [
+                'product_id' => 9,
+                'path' => 'product-9-6.jpeg',
+            ],
+            [
+                'product_id' => 9,
+                'path' => 'product-9-7.jpeg',
+            ],
+            [
+                'product_id' => 9,
+                'path' => 'product-9-8.jpeg',
+            ],
+            [
+                'product_id' => 10,
+                'path' => 'product-10.jpeg',
+            ],
+            [
+                'product_id' => 10,
+                'path' => 'product-10-1.jpeg',
+            ],
+            [
+                'product_id' => 10,
+                'path' => 'product-10-2.jpeg',
+            ],
+            [
+                'product_id' => 10,
+                'path' => 'product-10-3.jpeg',
+            ],
+            [
+                'product_id' => 10,
+                'path' => 'product-10-4.jpeg',
+            ],
+            [
+                'product_id' => 10,
+                'path' => 'product-10-5.jpeg',
+            ],
+            [
+                'product_id' => 10,
+                'path' => 'product-10-6.jpeg',
+            ],
+            [
+                'product_id' => 11,
+                'path' => 'product-11.jpeg',
+            ],
+            [
+                'product_id' => 11,
+                'path' => 'product-11-1.jpeg',
+            ],
+            [
+                'product_id' => 11,
+                'path' => 'product-11-2.jpeg',
+            ],
+            [
+                'product_id' => 11,
+                'path' => 'product-11-3.jpeg',
+            ],
+            [
+                'product_id' => 11,
+                'path' => 'product-11-4.jpeg',
+            ],
+            [
+                'product_id' => 11,
+                'path' => 'product-11-5.jpeg',
+            ],
+            [
+                'product_id' => 12,
+                'path' => 'product-12.jpeg',
+            ],
+            [
+                'product_id' => 12,
+                'path' => 'product-12-1.jpeg',
+            ],
+            [
+                'product_id' => 12,
+                'path' => 'product-12-2.jpeg',
+            ],
+            [
+                'product_id' => 12,
+                'path' => 'product-12-3.jpeg',
+            ],
+            [
+                'product_id' => 12,
+                'path' => 'product-12-4.jpeg',
+            ],
+            [
+                'product_id' => 12,
+                'path' => 'product-12-5.jpeg',
             ],
         ]);
 
@@ -549,6 +1152,66 @@ class DatabaseSeeder extends Seeder
                 'size' => 'XL',
                 'qty' => 5,
             ],
+            [
+                'product_id' => 10,
+                'size' => 'S',
+                'qty' => 5,
+            ],
+            [
+                'product_id' => 10,
+                'size' => 'M',
+                'qty' => 5,
+            ],
+            [
+                'product_id' => 10,
+                'size' => 'L',
+                'qty' => 5,
+            ],
+            [
+                'product_id' => 10,
+                'size' => 'XL',
+                'qty' => 5,
+            ],
+            [
+                'product_id' => 11,
+                'size' => 'S',
+                'qty' => 5,
+            ],
+            [
+                'product_id' => 11,
+                'size' => 'M',
+                'qty' => 5,
+            ],
+            [
+                'product_id' => 11,
+                'size' => 'L',
+                'qty' => 5,
+            ],
+            [
+                'product_id' => 11,
+                'size' => 'XL',
+                'qty' => 5,
+            ],
+            [
+                'product_id' => 12,
+                'size' => 'S',
+                'qty' => 5,
+            ],
+            [
+                'product_id' => 12,
+                'size' => 'M',
+                'qty' => 5,
+            ],
+            [
+                'product_id' => 12,
+                'size' => 'L',
+                'qty' => 5,
+            ],
+            [
+                'product_id' => 12,
+                'size' => 'XL',
+                'qty' => 5,
+            ],
         ]);
 
         DB::table('product_comments')->insert([
@@ -566,7 +1229,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'RoyBanks@gmail.com',
                 'name' => 'Roy Banks',
                 'messages' => 'Nice !',
-                'rating' => 6,
+                'rating' => 5,
             ],
         ]);
     }

@@ -72,9 +72,9 @@
                                         {{ $product->content }}
                                     </p>
                                     @if ($product->discount!=null)
-                                        <h4>{{ $product->discount }}đ<span>{{ $product->price }}đ</span></h4>
+                                        <h4>{{ number_format($product->discount) }}đ<span>{{ number_format($product->price) }}đ</span></h4>
                                     @else
-                                        <h4>{{ $product->price }}đ</h4>
+                                        <h4>{{ number_format($product->price) }}đ</h4>
                                     @endif
                                 </div>
                                 <form action="/cart/add/{{$product->id}}" method="get">
@@ -107,16 +107,6 @@
                                     <li><span>CATEGORIES</span>: {{ $product->productCategory->name }}</li>
                                     <li><span>TAGS</span>: {{ $product->tag }}</li>
                                 </ul>
-                                <div class="pd-share">
-                                    <div class="p-code">
-                                        {{ $product->sku }}
-                                    </div>
-                                    <div class="pd-social">
-                                        <a href=""><i class="ti-facebook"></i></a>
-                                        <a href=""><i class="ti-twitter-alt"></i></a>
-                                        <a href=""><i class="ti-linkedin"></i></a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>

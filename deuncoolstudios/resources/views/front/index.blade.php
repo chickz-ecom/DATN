@@ -94,26 +94,26 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="single-banner">
+                        <img src="front/img/banner-1.png" alt="">
+                        <a href="/shop/T-Shirt" class="inner-text">
+                            <h4>T-Shirt</h4>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="single-banner">
                         <img src="front/img/banner-1.jpg" alt="">
-                        <div class="inner-text">
-                            <h4>Men's</h4>
-                        </div>
+                        <a href="/shop/Hoddie" class="inner-text">
+                            <h4>Hoddie</h4>
+                        </a>
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="single-banner">
-                        <img src="front/img/banner-2.jpg" alt="">
-                        <div class="inner-text">
-                            <h4>Women's</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="single-banner">
-                        <img src="front/img/banner-3.jpg" alt="">
-                        <div class="inner-text">
-                            <h4>Kid's</h4>
-                        </div>
+                    <div class="single-banner" style="height:334px;">
+                        <img src="front/img/banner.jpeg" alt="" style="height:334px;">
+                        <a href="/shop/Áo khoác nỉ" class="inner-text">
+                            <h4>Áo khoác nỉ</h4>
+                        </a>
                     </div>
                 </div>
             </div>

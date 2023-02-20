@@ -135,6 +135,9 @@ class AccountController extends Controller
         if($request->get('level')){
             unset($data['level']);
         }
+        if($request->get('email')){
+            unset($data['email']);
+        }
         $user = User::find(auth()->user()->id);
         $user->update($data);
         return redirect('account/manage');

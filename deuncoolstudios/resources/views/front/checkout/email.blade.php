@@ -25,11 +25,6 @@
 
             <div class="row"
                  style="height: 100px; padding: 10px 20px; line-height: 90px; background-color: white; box-sizing: border-box;">
-                {{--<h1 class="pl-3"
-                    style="color: orange; line-height: 00px; float: left; padding-left: 20px; padding-top: 5px;">
-                    <img src="{{$message->embed(asset('front/img/logo.png'))}}"
-                         height="40" alt="logo">
-                </h1>--}}
                 <h1 class="pl-2"
                     style="color: blue; line-height: 30px; float: left; padding-left: 20px; font-size: 40px; font-weight: 500;">
                     Deuncoolstudios
@@ -143,19 +138,19 @@
                                 <tr>
                                     <td class="">Shipping fee</td>
                                     <td class="pr-3 text-right" style="text-align: right; padding-right: 20px;">
-                                        0.0 $
+                                        0.0 d
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="">Subtotal</td>
                                     <td class="pr-3 text-right" style="text-align: right; padding-right: 20px;">
-                                        {{ $subtotal }} $
+                                        {{ $subtotal }} d
                                     </td>
                                 </tr>
                                 <tr style="font-size: 18px;">
                                     <td><b>TOTAL</b></td>
                                     <td class="pr-3 text-right" style="text-align: right; padding-right: 20px;">
-                                        <b>{{ $total }} $</b>
+                                        <b>{{ $total }} d</b>
                                     </td>
                                 </tr>
                             </table>

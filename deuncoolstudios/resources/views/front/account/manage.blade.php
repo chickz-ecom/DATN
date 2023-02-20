@@ -57,7 +57,7 @@
                                             <label for="email"
                                                 class="col-md-3 text-md-center col-form-label">Email</label>
                                             <div class="col-md-9 col-xl-8">
-                                                <input required name="email" id="email" placeholder="Email" type="email"
+                                                <input disabled name="email" id="email" placeholder="Email" type="email"
                                                     class="form-control" value="{{$user->email}}">
                                             </div>
                                         </div>

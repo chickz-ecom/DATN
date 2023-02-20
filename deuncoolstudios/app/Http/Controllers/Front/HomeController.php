@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use App\Models\Product;
+use App\Models\ProductCategory;
 use App\Models\UserCart;
 use Illuminate\Http\Request;
 
@@ -18,9 +19,10 @@ class HomeController extends Controller
     public function index()
     {
         //
-        $menProducts = Product::where('featured', true)->where('product_category_id',1)->get();
-        $womenProducts = Product::where('featured', true)->where('product_category_id',2)->get();
+        $menProducts = Product::where('featured', true)->where('product_category_id',2)->get();
+        $womenProducts = Product::where('featured', true)->where('product_category_id',1)->get();
         $blogs = Blog::orderbydesc('id')->limit(3)->get();
+        $categories = ProductCategory::orderby('id')->limit(3)->get();
         // 
 
 
@@ -33,14 +35,15 @@ class HomeController extends Controller
                 $total += $item->total;
             }
 
-            return view('front/index', compact('carts','total', 'menProducts', 'womenProducts', 'blogs'));
+            return view('front/index', compact('carts','total', 'menProducts', 'womenProducts', 'blogs', 'categories'));
 
         }
         return view('front/index', 
             [
                 'menProducts'=>$menProducts,
                 'womenProducts'=>$womenProducts,
-                'blogs'=>$blogs
+                'blogs'=>$blogs,
+                'categories'=>$categories
             ]);
     }
 

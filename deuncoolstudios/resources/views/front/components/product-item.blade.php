@@ -34,16 +34,16 @@
             {{ $product->tag }}
         </div>
         <a href="shop/product/{{ $product->id }}">
-            <h5>
+            <h5 style="font-weight: 600;">
                 {{ $product->name }}
             </h5>
         </a>
         <div class="product-price">
             @if ($product->discount!=null)
-                {{ $product->discount }}đ
-                <span>{{ $product->price }}đ</span>
+                {{ number_format($product->discount) }}đ
+                <span>{{ number_format($product->price) }}đ</span>
             @else
-                {{ $product->price }}đ
+                {{ number_format($product->price) }}đ
             @endif
         </div>
     </div>
