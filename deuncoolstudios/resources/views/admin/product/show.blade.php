@@ -81,6 +81,14 @@
 
                                     <div class="position-relative row form-group">
                                         <label for="brand_id"
+                                            class="col-md-3 text-md-center col-form-label">Product Rating</label>
+                                        <div class="col-md-9 col-xl-8">
+                                            <p><a href="./admin/product/{{$product->id}}/rating">Manage Rating</a></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="position-relative row form-group">
+                                        <label for="brand_id"
                                             class="col-md-3 text-md-center col-form-label">Brand</label>
                                         <div class="col-md-9 col-xl-8">
                                             <p>{{$product->brand->name}}</p>

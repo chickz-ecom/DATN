@@ -22,7 +22,7 @@
                                         @method('PUT')
                                         <div class="position-relative row form-group">
                                             <label for="image"
-                                                class="col-md-3 text-md-center col-form-label">Avatar</label>
+                                                class="col-md-3 text-md-center col-form-label">Ảnh đại diện</label>
                                             <div class="col-md-9 col-xl-8">
                                                 <img style="height: 200px; cursor: pointer;"
                                                     class="thumbnail rounded-circle" data-toggle="tooltip"
@@ -32,13 +32,13 @@
                                                     class="image form-control-file" style="display: none;" value="{{$user->avatar}}">
                                                 <input type="hidden" name="image_old" value="">
                                                 <small class="form-text text-muted">
-                                                    Click on the image to change (required)
+                                                    Nhấn để thay đổi (yêu cầu)
                                                 </small>
                                             </div>
                                         </div>
 
                                         <div class="position-relative row form-group">
-                                            <label for="name" class="col-md-3 text-md-center col-form-label">First Name</label>
+                                            <label for="name" class="col-md-3 text-md-center col-form-label">Họ</label>
                                             <div class="col-md-9 col-xl-8">
                                                 <input required name="first_name" id="first_name" placeholder="First Name" type="text"
                                                     class="form-control" value="{{$user->first_name}}">
@@ -46,7 +46,7 @@
                                         </div>
 
                                         <div class="position-relative row form-group">
-                                            <label for="last_name" class="col-md-3 text-md-center col-form-label">Last Name</label>
+                                            <label for="last_name" class="col-md-3 text-md-center col-form-label">Tên</label>
                                             <div class="col-md-9 col-xl-8">
                                                 <input required name="last_name" id="last_name" placeholder="Last Name" type="text"
                                                     class="form-control" value="{{$user->last_name}}">
@@ -63,7 +63,7 @@
                                         </div>
                                         <div class="position-relative row form-group">
                                             <label for="country"
-                                                class="col-md-3 text-md-center col-form-label">Country</label>
+                                                class="col-md-3 text-md-center col-form-label">Quốc tịch</label>
                                             <div class="col-md-9 col-xl-8">
                                                 <input name="country" id="country" placeholder="Country"
                                                     type="text" class="form-control" value="{{$user->country}}">
@@ -72,7 +72,7 @@
 
                                         <div class="position-relative row form-group">
                                             <label for="street_address" class="col-md-3 text-md-center col-form-label">
-                                                Street Address
+                                                Địa chỉ
                                             </label>
                                             <div class="col-md-9 col-xl-8">
                                                 <input name="street_address" id="street_address"
@@ -84,7 +84,7 @@
 
                                         <div class="position-relative row form-group">
                                             <label for="town_city" class="col-md-3 text-md-center col-form-label">
-                                                Town City
+                                                Thành phố
                                             </label>
                                             <div class="col-md-9 col-xl-8">
                                                 <input name="town_city" id="town_city" placeholder="Town City"
@@ -94,7 +94,7 @@
 
                                         <div class="position-relative row form-group">
                                             <label for="phone"
-                                                class="col-md-3 text-md-center col-form-label">Phone</label>
+                                                class="col-md-3 text-md-center col-form-label">Số điện thoại</label>
                                             <div class="col-md-9 col-xl-8">
                                                 <input required name="phone" id="phone" placeholder="Phone" type="tel"
                                                     class="form-control" value="{{$user->phone}}">
@@ -102,7 +102,7 @@
                                         </div>
                                         <div class="position-relative row form-group">
                                             <label for="description"
-                                                   class="col-md-3 text-md-center col-form-label">Description</label>
+                                                   class="col-md-3 text-md-center col-form-label">Mô tả</label>
                                             <div class="col-md-9 col-xl-8">
                                                 <textarea name="description" id="description" class="form-control"></textarea>
                                             </div>
@@ -113,7 +113,7 @@
                                                 <div class="row" style="justify-content: space-around;">
 
                                                     <a href="./account/changePassword" class="border-0 btn btn-danger mr-1">
-                                                        <span>Change Password</span>
+                                                        <span>Đổi mật khẩu</span>
                                                     </a>
     
                                                     <button type="submit"
@@ -121,7 +121,7 @@
                                                         <span class="btn-icon-wrapper pr-2 opacity-8">
                                                             <i class="fa fa-download fa-w-20"></i>
                                                         </span>
-                                                        <span>Save</span>
+                                                        <span>Lưu</span>
                                                     </button>
                                                 </div>
                                             </div>

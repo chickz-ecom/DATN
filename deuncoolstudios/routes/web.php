@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\ProductCategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductDetailController;
 use App\Http\Controllers\Admin\ProductImageController;
+use App\Http\Controllers\Admin\ProductRatingController;
 use App\Http\Controllers\Front\BlogController;
 use App\Http\Controllers\Front\ForgetPasswordController;
 use App\Models\Brand;
@@ -97,7 +98,7 @@ Route::prefix('account')->group(function(){
 Route::get('contact', [HomeController::class, 'contact']);
     # Dashbroad
 Route::prefix('admin')->middleware('CheckAdminLogin')->group(function(){
-    Route::redirect('', 'admin/user', 301);
+    Route::get('/', [AdminHomeController::class, 'index']);
     Route::resource('user', UserController::class);
     Route::resource('category', ProductCategoryController::class);
     Route::resource('brand', BrandController::class);
@@ -105,6 +106,8 @@ Route::prefix('admin')->middleware('CheckAdminLogin')->group(function(){
     Route::resource('product/{product_id}/image', ProductImageController::class);
     Route::resource('product/{product_id}/detail', ProductDetailController::class);
     Route::resource('order', OrderController::class);
+    Route::get('product/{product_id}/rating', [ProductRatingController::class, 'index']);
+    Route::delete('product/{product_id}/rating/{product_rating_id}', [ProductRatingController::class, 'destroy']);
     Route::resource('blog', AdminBlogController::class);
     Route:: prefix('login')->group(function(){
         Route::get('/', [AdminHomeController::class, 'getLogin'])->withoutMiddleware('CheckAdminLogin');

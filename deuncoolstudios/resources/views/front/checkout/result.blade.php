@@ -10,8 +10,8 @@
                     <div class="col-lg-12">
                         <div class="breadcrumb-text">
                             <a href="/"><i class="fa fa-home"></i>Home</a>
-                            <a href="/checkout">Checkout</a>
-                            <span>Result</span>
+                            <a href="/checkout">Thanh toán</a>
+                            <span>Kết quả</span>
                         </div>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
                 <div class="col-lg-12">
                     <h4>{{ $notification }}</h4>
 
-                    <a href="/" class="site-btn mt-3" style="display: block; width: fit-content;">Countinue Shopping</a>
+                    <a href="/" class="site-btn mt-3" style="display: block; width: fit-content;">Tiếp tục mua hàng</a>
 
                 </div>
             </div>

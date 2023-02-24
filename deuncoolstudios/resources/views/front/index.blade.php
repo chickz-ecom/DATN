@@ -110,7 +110,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="single-banner" style="height:334px;">
-                        <img src="front/img/banner.jpeg" alt="" style="height:334px;">
+                        <img src="front/img/banner-1.png" alt="" style="mheight:334px;">
                         <a href="/shop/Áo khoác nỉ" class="inner-text">
                             <h4>Áo khoác nỉ</h4>
                         </a>
@@ -128,7 +128,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-3">
-                    <div class="product-large set-bg" data-setbg="front/img/t-shirt.jpeg">
+                    <div class="product-large set-bg" data-setbg="front/img/t-shirt.jpeg" style="background-position:left;">
                         <h2 style="color: #000;">T-Shrit</h2>
                         <a href="#">Discover More</a>
                     </div>

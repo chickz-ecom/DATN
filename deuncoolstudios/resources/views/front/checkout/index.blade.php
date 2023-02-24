@@ -9,9 +9,9 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="breadcrumb-text">
-                            <a href="/"><i class="fa fa-home"></i>Home</a>
+                            <a href="/"><i class="fa fa-home"></i>Trang chủ</a>
                             <a href="/shop">Shop</a>
-                            <span>Check Out</span>
+                            <span>Thanh toán</span>
                         </div>
                     </div>
                 </div>
@@ -30,45 +30,42 @@
                             @csrf
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <div class="checkout-content">
-                                        <a href="login.html" class="content-btn">Click here to Login</a>
-                                    </div>
                                     <h4>
-                                        Billing Details
+                                        Chi tiết hóa đơn
                                     </h4>
                                     <div class="row">
                                         <div class="col-lg-6">
-                                            <label for="fir">First Name <span>*</span></label>
+                                            <label for="fir">Họ <span>*</span></label>
                                             <input type="text" name="first_name" id="fir" value="{{ Auth::user()->first_name ?? '' }}">
                                         </div>
                                         <div class="col-lg-6">
-                                            <label for="last">Last Name <span>*</span></label>
+                                            <label for="last">Tên <span>*</span></label>
                                             <input type="text" name="last_name" id="last" value="{{ Auth::user()->last_name ?? '' }}">
                                         </div>
                                         <div class="col-lg-12">
-                                            <label for="cun">Country <span>*</span></label>
+                                            <label for="cun">Quốc tịch <span>*</span></label>
                                             <input type="text" name="country" id="cun">
                                         </div>
                                         <div class="col-lg-12">
-                                            <label for="street">Street Address <span>*</span></label>
+                                            <label for="street">Địa chỉ <span>*</span></label>
                                             <input type="text" name="street_address" id="street" class="street-first">
                                         </div>
                                         <div class="col-lg-12">
-                                            <label for="town">Town / City <span>*</span></label>
+                                            <label for="town">Thành phố <span>*</span></label>
                                             <input type="text" name="town_city" id="town" value="{{ Auth::user()->town_city ?? '' }}">
                                         </div>
                                         <div class="col-lg-6">
-                                            <label for="email">Email Address<span>*</span></label>
+                                            <label for="email">Địa chỉ email<span>*</span></label>
                                             <input disabled type="text" name="email" id="email" value="{{ Auth::user()->email ?? '' }}">
                                         </div>
                                         <div class="col-lg-6">
-                                            <label for="phone"><span>Phone *</span></label>
+                                            <label for="phone"><span>Số điện thoại *</span></label>
                                             <input type="text" name="phone" id="phone" value="{{ Auth::user()->phone ?? '' }}">
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="create-item">
                                                 <label for="acc-create">
-                                                    Create Account?
+                                                    Tạo tài khoản?
                                                     <input type="checkbox" name="" id="acc-create">
                                                     <span class="checkmark"></span>
                                                 </label>
@@ -78,7 +75,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="place-order">
-                                        <h4>Your Order</h4>
+                                        <h4>Đơn hàng của bạn</h4>
                                         <div class="order-total">
                                             <ul class="order-table">
                                                 <li>Product <span>Total</span></li>
@@ -97,14 +94,14 @@
                                             <div class="payment-check">
                                                 <div class="pc-item">
                                                     <label for="pc-check">
-                                                        Pay later
+                                                        Thanh toán khi nhận hàng
                                                         <input type="radio" name="payment_type" id="pc-check" value="pay_later" checked>
                                                         <span class="checkmark"></span>
                                                     </label>
                                                 </div>
                                                 <div class="pc-item">
                                                     <label for="pc-paypal">
-                                                        Online payment
+                                                        Thanh toán online
                                                         <input type="radio" name="payment_type" id="pc-paypal" value="online_payment">
                                                         <span class="checkmark"></span>
                                                     </label>
@@ -131,44 +128,44 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="checkout-content">
-                                        <a href="login.html" class="content-btn">Click here to Login</a>
+                                        <a href="/account/login" class="content-btn">Đăng nhập</a>
                                     </div>
                                     <h4>
-                                        Billing Details
+                                        Chi tiết đơn hàng
                                     </h4>
                                     <div class="row">
                                         <div class="col-lg-6">
-                                            <label for="fir">First Name <span>*</span></label>
+                                            <label for="fir">Họ <span>*</span></label>
                                             <input type="text" name="first_name" id="fir" value="{{ Auth::user()->first_name ?? '' }}">
                                         </div>
                                         <div class="col-lg-6">
-                                            <label for="last">Last Name <span>*</span></label>
+                                            <label for="last">Tên <span>*</span></label>
                                             <input type="text" name="last_name" id="last" value="{{ Auth::user()->last_name ?? '' }}">
                                         </div>
                                         <div class="col-lg-12">
-                                            <label for="cun">Country <span>*</span></label>
+                                            <label for="cun">Quốc tịch <span>*</span></label>
                                             <input type="text" name="country" id="cun">
                                         </div>
                                         <div class="col-lg-12">
-                                            <label for="street">Street Address <span>*</span></label>
+                                            <label for="street">Địa chỉ <span>*</span></label>
                                             <input type="text" name="street_address" id="street" class="street-first">
                                         </div>
                                         <div class="col-lg-12">
-                                            <label for="town">Town / City <span>*</span></label>
+                                            <label for="town">Thành phố <span>*</span></label>
                                             <input type="text" name="town_city" id="town" value="{{ Auth::user()->town_city ?? '' }}">
                                         </div>
                                         <div class="col-lg-6">
-                                            <label for="email">Email Address<span>*</span></label>
+                                            <label for="email">Địa chỉ email<span>*</span></label>
                                             <input type="text" name="email" id="email" value="{{ Auth::user()->email ?? '' }}">
                                         </div>
                                         <div class="col-lg-6">
-                                            <label for="phone"><span>Phone *</span></label>
+                                            <label for="phone"><span>Số điện thoại *</span></label>
                                             <input type="text" name="phone" id="phone" value="{{ Auth::user()->phone ?? '' }}">
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="create-item">
                                                 <label for="acc-create">
-                                                    Create Account?
+                                                    Tạo tài khoản?
                                                     <input type="checkbox" name="" id="acc-create">
                                                     <span class="checkmark"></span>
                                                 </label>

@@ -20,7 +20,7 @@
                 <li class="w-icon active">
                     <a href="/cart/add/{{ $product->id }}" style="position: relative;">
                         <i class="icon_bag_alt"></i>
-                        <div class="tooltip-add-to-cart">Add to cart</div>
+                        <div class="tooltip-add-to-cart">Thêm vào giỏ hàng</div>
                     </a>
                 </li>
                 @endif

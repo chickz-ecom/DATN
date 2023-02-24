@@ -59,7 +59,7 @@
                         {{ Auth::user()->first_name }}
                         <ul class="dropdown1">
                             <li><a href="./account/manage">Quản lý tài khoản</a></li>
-                            <li><a href="./account/chang-password">Đổi mật khẩu</a></li>
+                            <li><a href="./account/changPassword">Đổi mật khẩu</a></li>
                             <li><a href="./account/logout">Đăng xuất</a></li>
                         </ul>
                     </div>
@@ -67,7 +67,7 @@
                         <div class="login-panel manage-account">
                             <img src="front/img/user/default.jpg" alt="" class="avatar-account">
                             <a href="./account/login" class="btn">
-                                Login
+                                Đăng nhập
                             </a>
                         </div>
                     @endif
@@ -105,12 +105,6 @@
                     </div>
                     <div class="col-lg-3 col-md-3 text-right">
                         <ul class="nav-right">
-                            <li class="heart-icon">
-                                <a href="#">
-                                    <i class="icon_heart_alt"></i>
-                                    <span>1</span>
-                                </a>
-                            </li>
                             <li class="cart-icon">
                                 <a href="./cart">
                                     <i class="icon_bag_alt"></i>
@@ -171,8 +165,8 @@
                                         @endif
                                     </div>
                                     <div class="select-button">
-                                        <a href="./cart" class="primary-btn view-card">VIEW CART</a>
-                                        <a href="./checkout" class="primary-btn checkout-btn">CHECK OUT</a>
+                                        <a href="./cart" class="primary-btn view-card">Xem giỏ hàng</a>
+                                        <a href="./checkout" class="primary-btn checkout-btn">Thanh toán</a>
                                     </div>
                                 </div>
                             </li>
@@ -185,17 +179,17 @@
             <div class="container">
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <li class="{{ (request()->segment(1)=='') ? 'active' : '' }}"><a href="/">Home</a></li>
+                        <li class="{{ (request()->segment(1)=='') ? 'active' : '' }}"><a href="/">Trang chủ</a></li>
                         <li class="{{ (request()->segment(1)=='shop') ? 'active' : '' }}"><a href="./shop">Shop</a></li>
-                        <li class="{{ (request()->segment(1)=='blog') ? 'active' : '' }}"><a href="./blog">Blog</a></li>
-                        <li class="{{ (request()->segment(1)=='contact') ? 'active' : '' }}"><a href="./contact">Contact</a></li>
-                        <li><a href="">Pages</a>
+                        <li class="{{ (request()->segment(1)=='blog') ? 'active' : '' }}"><a href="./blog">Bài viết</a></li>
+                        <li class="{{ (request()->segment(1)=='contact') ? 'active' : '' }}"><a href="./contact">Liên hệ</a></li>
+                        <li><a href="">Trang</a>
                             <ul class="dropdown">
-                                <li><a href="./account/my-order">My Order</a></li>
-                                <li><a href="./cart">Shopping Cart</a></li>
-                                <li><a href="./checkout">Checkout</a></li>
-                                <li><a href="./register">Register</a></li>
-                                <li><a href="./account/login">Login</a></li>
+                                <li><a href="./account/my-order">Đơn hàng của tôi</a></li>
+                                <li><a href="./cart">Giỏ hàng</a></li>
+                                <li><a href="./checkout">Thanh toán</a></li>
+                                <li><a href="./register">Đăng kí</a></li>
+                                <li><a href="./account/login">Đăng nhập</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -288,7 +282,7 @@
                     <div class="footer-widget">
                         <h5>Information</h5>
                         <ul>
-                            <li><a href="">About Us</a></li>
+                            <li><a href="/contact">Về chúng tôi</a></li>
                             <li><a href="">Checkout</a></li>
                             <li><a href="">Contact</a></li>
                             <li><a href="">Servicius</a></li>

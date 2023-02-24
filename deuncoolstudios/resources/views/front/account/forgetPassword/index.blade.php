@@ -13,8 +13,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="breadcrumb-text">
-                            <a href="/"><i class="fa fa-home"></i>Home</a>
-                            <span>Forget Password</span>
+                            <a href="/"><i class="fa fa-home"></i>Trang chủ</a>
+                            <span>Quên mật khẩu</span>
                         </div>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
                 <div class="row">
                     <div class="col-lg-4 offset-lg-4" style="box-shadow: 1px 1px 10px rgba(0 0 0 /.7);">
                         <div class="login-form">
-                            <h2 class="mt-2">Reset Password</h2>
+                            <h2 class="mt-2">Quên mật khẩu</h2>
                             @if ($errors->any())
                                 <div class="alert alert-danger">
                                     <ul class="p-0 m-0">
@@ -53,10 +53,10 @@
                             <form action="" method="post">
                                 @csrf
                                 <div class="group-input">
-                                    <label for="email">Email address *</label>
+                                    <label for="email">Địa chỉ email *</label>
                                     <input type="email" name="email" id="email">
                                 </div>
-                                <button type="submit" class="site-btn login-btn mb-5">Send Password Reset Link</button>
+                                <button type="submit" class="site-btn login-btn mb-5">Gửi yêu cầu lấy lại mật khẩu</button>
                             </form>
                         </div>
                     </div>

@@ -8,9 +8,9 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="breadcrumb-text">
-                            <a href="/"><i class="fa fa-home"></i>Home</a>
+                            <a href="/"><i class="fa fa-home"></i>Trang chủ</a>
                             <a href="/shop">Shop</a>
-                            <span>My Order</span>
+                            <span>Đơn hàng của tôi</span>
                         </div>
                     </div>
                 </div>
@@ -29,11 +29,11 @@
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>Image</th>
+                                        <th>Ảnh</th>
                                         <th>ID</th>
-                                        <th>Product Name</th>
-                                        <th>Total</th>
-                                        <th>Details</th>
+                                        <th>Tên sản phẩm</th>
+                                        <th>Tổng</th>
+                                        <th>Chi tiết</th>
                                     </tr>
                                 </thead>
                                 <tbody>

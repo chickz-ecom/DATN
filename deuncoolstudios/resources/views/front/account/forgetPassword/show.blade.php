@@ -13,8 +13,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="breadcrumb-text">
-                            <a href="/"><i class="fa fa-home"></i>Home</a>
-                            <span>Register</span>
+                            <a href="/"><i class="fa fa-home"></i>Trang chủ</a>
+                            <span>Đổi mật khẩu</span>
                         </div>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
                 <div class="row">
                     <div class="col-lg-4 offset-lg-4" style="box-shadow: 1px 1px 10px rgba(0 0 0 /.7);">
                         <div class="login-form">
-                            <h2 class="mt-2">Reset Password</h2>
+                            <h2 class="mt-2">Đổi mật khẩu</h2>
                             @if ($errors->any())
                                 <div class="alert alert-danger">
                                     <ul class="p-0 m-0">
@@ -47,18 +47,18 @@
                                 @csrf
                                 <input type="hidden" name="token" value="{{$token}}" id="">
                                 <div class="group-input">
-                                    <label for="email">Email address *</label>
+                                    <label for="email">Địa chỉ email *</label>
                                     <input type="email" name="email" id="email">
                                 </div>
                                 <div class="group-input">
-                                    <label for="pass">New Password *</label>
+                                    <label for="pass">Mật khẩu mới *</label>
                                     <input type="password" name="password" id="pass">
                                 </div>
                                 <div class="group-input">
-                                    <label for="con-pass">Comfirm Password *</label>
+                                    <label for="con-pass">Nhập lại mật khẩu mới *</label>
                                     <input type="password" name="password_confirmation" id="con-pass">
                                 </div>
-                                <button type="submit" class="site-btn register-btn mb-5">Reset Password</button>
+                                <button type="submit" class="site-btn register-btn mb-5">Đổi mật khẩu</button>
                             </form>
                         </div>
                     </div>
