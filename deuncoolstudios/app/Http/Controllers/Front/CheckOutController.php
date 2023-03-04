@@ -119,9 +119,35 @@ class CheckOutController extends Controller
             }
             // Tra ve ket qua   
             return redirect('checkout/result')->with('notification', 'Đặt hàng thành công, vui lòng kiểm tra email để xem thông tin chi tiết đơn hàng');
-         }
+        }
          if($request->payment_type == 'online_payment'){ 
             // gửi mail
+            if(auth()->user()){
+                foreach($carts as $cart){
+                    $data = [
+                        'order_id'=>$order->id,
+                        'product_id'=>$cart->product_id,
+                        'qty'=>$cart->qty,
+                        'amount'=>$cart->price,
+                        'total'=>$cart->price * $cart->qty,
+                        'size'=>$cart->size
+                    ];
+                    OrderDetail::create($data);
+                }
+            }
+            else{
+                foreach ($carts as $cart) {
+                    $data = [
+                        'order_id'=>$order->id,
+                        'product_id'=>$cart->id,
+                        'qty'=>$cart->qty,
+                        'amount'=>$cart->price,
+                        'total'=>$cart->price * $cart->qty,
+                        'size' => $cart->options->size
+                    ];  
+                    OrderDetail::create($data);
+                }
+            }
             if(auth()->user()){
                 $totals = UserCart::select('total')->where('user_id', auth()->user()->id)->get();
                 $total = 0;

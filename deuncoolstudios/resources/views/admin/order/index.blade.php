@@ -49,6 +49,7 @@
                                                 <th>Customer / Products</th>
                                                 <th class="text-center">Address</th>
                                                 <th class="text-center">Amount</th>
+                                                <th class="text-center">Payment type</th>
                                                 <th class="text-center">Status</th>
                                                 <th class="text-center">Actions</th>
                                             </tr>
@@ -85,6 +86,9 @@
                                                         {{$order->street_address . ' ' . $order->town_city}}
                                                     </td>
                                                     <td class="text-center">{{array_sum(array_column($order->orderDetails->toArray(),'total'))}}đ</td>
+                                                    <td class="text-center">
+                                                        {{ $order->payment_type == 'pay_later' ? 'COD' : 'Online' }}
+                                                    </td>
                                                     <td class="text-center">
                                                         <form action="admin/order/{{$order->id}}" method="post">
                                                             @csrf

@@ -20,7 +20,7 @@
             padding: 20px;">
               <h3>{{ $sum }}</h3>
     
-              <p>Quantity Orders</p>
+              <p>Tổng số lượng đơn hàng</p>
             </div>
           </div>
         </div>
