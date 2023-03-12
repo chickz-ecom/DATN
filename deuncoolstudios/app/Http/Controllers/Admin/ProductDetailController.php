@@ -100,6 +100,7 @@ class ProductDetailController extends Controller
     {
         //
         ProductDetail::find($detail)->delete();
+        $this->updateQty($product);
         return redirect('admin/product/' . $product . '/detail');
     }
     public function updateQty($product_id){

@@ -157,6 +157,17 @@
                                         </div>
                                     </div>
                                 </div>
+                                <form action="admin/order/{{$order->id}}" method="post" style="display:flex;justify-content: center;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-outline-danger border-0 btn-xxl mb-5"
+                                        style="background-color: red; color: white;"
+                                        type="submit" data-toggle="tooltip" title="Delete"
+                                        data-placement="bottom"
+                                        onclick="return confirm('Do you really want to delete this item?')">
+                                        DELETE ORDER
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>

@@ -53,7 +53,7 @@ class AccountController extends Controller
     }
     public function logout(){
         Auth::logout();
-        return back();
+        return redirect('account/login');
     }
     public function register(){
         if(auth()->user()){

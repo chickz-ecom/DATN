@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Order;
+use App\Models\OrderDetail;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -100,5 +101,9 @@ class OrderController extends Controller
     public function destroy($id)
     {
         //
+        $order = Order::where('id', $id);
+        $order->delete();
+        OrderDetail::where('order_id', $id)->delete();
+        return redirect('admin/order');
     }
 }
