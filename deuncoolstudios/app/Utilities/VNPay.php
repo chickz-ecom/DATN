@@ -12,8 +12,8 @@ class VNPay
      * config.php
      *
      */
-    static $vnp_TmnCode = "X44JDVTW"; //Mã website tại VNPAY
-    static $vnp_HashSecret = "FZBAGLVAIDUIOZPHWSDVIQECGTXYJGZW"; //Chuỗi bí mật
+    static $vnp_TmnCode = "P07KFORA"; //Mã website tại VNPAY
+    static $vnp_HashSecret = "IYCASQBDSXHYWSNOEGVHNGLHZKXSOSIL"; //Chuỗi bí mật
     static $vnp_Url = "http://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
     static $vnp_Returnurl = "/checkout/vnPayCheck"; //Chú ý cấu hình env('APP_URL') khi sử dụng biến này.
 
@@ -46,8 +46,8 @@ class VNPay
         $vnp_OrderType = 100000; // Loại hàng hóa: Thực Phẩm - Tiêu Dùng (Xem thêm mã tại: https://sandbox.vnpayment.vn/apis/docs/loai-hang-hoa)
         $vnp_Amount = $data['vnp_Amount'] * 100;
         $vnp_Locale = 'vn'; //Ngôn ngữ tiếng việt
-//        $vnp_BankCode = $_POST['bank_code'];
-//        $vnp_BankCode = 'NCB';
+    //    $vnp_BankCode = $_POST['bank_code'];
+    //    $vnp_BankCode = 'NCB';
         $vnp_IpAddr = $_SERVER['REMOTE_ADDR'];
 
         $inputData = array(

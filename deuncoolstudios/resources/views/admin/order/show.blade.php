@@ -137,15 +137,19 @@
                                     <div class="position-relative row form-group">
                                         <label for="status" class="col-md-3 text-md-center col-form-label">Status</label>
                                         <div class="col-md-9 col-xl-8">
-                                            @if ($order->status==0)
-                                                <div class="badge badge-warning">
-                                                    Pending
-                                                </div>
-                                            @else
-                                                <div class="badge badge-dark">
-                                                    Finish
-                                                </div>
-                                            @endif
+                                        @if ($order->status==0)
+                                            <div class="badge badge-warning">
+                                                Pending
+                                            </div>
+                                        @elseif($order->status==1)
+                                        <div class="badge badge-danger">
+                                                Processing
+                                            </div>
+                                        @else
+                                            <div class="badge badge-dark">
+                                                Finish
+                                            </div>
+                                        @endif
                                         </div>
                                     </div>
 
@@ -157,20 +161,42 @@
                                         </div>
                                     </div>
                                 </div>
-                                <form action="admin/order/{{$order->id}}" method="post" style="display:flex;justify-content: center;">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="btn btn-outline-danger border-0 btn-xxl mb-5"
-                                        style="background-color: red; color: white;"
-                                        type="submit" data-toggle="tooltip" title="Delete"
-                                        data-placement="bottom"
-                                        onclick="return confirm('Do you really want to delete this item?')">
-                                        DELETE ORDER
-                                    </button>
-                                </form>
+                                <div class="container">
+                                    <div class="row w-100 justify-content-around">
+                                        <button class="btn btn-outline-info border-0 btn-xxl mb-5"
+                                            id="btn_print_order"
+                                            style="background-color: blue; color: white;"
+                                            type="submit" data-toggle="tooltip" title="Print order"
+                                            data-placement="bottom"
+                                            >
+                                            Print order
+                                        </button>
+                                        <form action="admin/order/{{$order->id}}" method="post" style="display:flex;justify-content: center;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-outline-danger border-0 btn-xxl mb-5"
+                                                style="background-color: red; color: white;"
+                                                type="submit" data-toggle="tooltip" title="Delete"
+                                                data-placement="bottom"
+                                                onclick="return confirm('Do you really want to delete this item?')">
+                                                DELETE ORDER
+                                            </button>
+                                         </form>
+                                    </div>
+                                </div>
+                                <input type="hidden" value="{{$order->id}}" name="order_id_hidden">
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+                <script>
+                    const popup = document.querySelector('.popup_print');
+                    const id = document.querySelector('input[name="order_id_hidden"]').value;
+                    const btn_print_order = document.querySelector('#btn_print_order');
+                    btn_print_order.addEventListener('click', ()=>{
+                        window.open(`admin/order/print-order/${id}`, '_blank');
+                    });
+                </script>
                 <!-- End Main -->
 @endsection

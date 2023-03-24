@@ -85,6 +85,9 @@ class OrderController extends Controller
             $order->status = 1;
         }
         else if($order->status==1){
+            $order->status = 2;
+        }
+        else if($order->status==2){
             $order->status = 0;
         }
         $order->save();
@@ -105,5 +108,16 @@ class OrderController extends Controller
         $order->delete();
         OrderDetail::where('order_id', $id)->delete();
         return redirect('admin/order');
+    }
+    public function print($id) {
+        $order = Order::find($id);
+        $total = $order->orderDetails->sum('total');
+        $subtotal = $total;
+        return view('admin/popup', compact('order', 'total', 'subtotal'));
+    }
+    public function status($status) {
+        $status = (int)$status;
+        $orders = Order::where('status', $status)->orderby('id')->paginate(10);
+        return view('admin.order.index',compact('orders'));
     }
 }

@@ -25,7 +25,7 @@
                         <div class="col-md-12">
                             <div class="main-card mb-3 card">
 
-                                <div class="card-header">
+                                <div class="card-header d-flex" style="justify-content: space-between; align-items: center;">
 
                                     <form>
                                         <div class="input-group">
@@ -39,6 +39,25 @@
                                             </span>
                                         </div>
                                     </form>
+                                    <div class="d-flex " style="height: 100%;align-items: center;">
+                                        <div class="mr-5">
+                                            Filter:
+                                        </div>
+                                        <div class="d-flex gap-5 mr-4" style="height: 70%;">
+                                            <div class="m-0 btn-filter-status d-flex p-2 bg-info" style="cursor: pointer;justify-content: space-between; align-items: center; color:#fff; border-radius: 5px;" data-status="*">
+                                                All
+                                            </div>
+                                            <div class="m-0 btn-filter-status d-flex p-2 bg-warning" style="cursor: pointer;justify-content: space-between; align-items: center; color:#fff; border-radius: 5px;" data-status="0">
+                                                Pendding
+                                            </div>
+                                            <div class="m-0 btn-filter-status d-flex p-2 bg-danger" style="cursor: pointer;justify-content: space-between; align-items: center;color:#fff;border-radius: 5px;" data-status="1">
+                                                Processing
+                                            </div>
+                                            <div class="m-0 btn-filter-status d-flex p-2 bg-dark" style="cursor: pointer;justify-content: space-between; align-items: center;color:#fff;border-radius: 5px;" data-status="2">
+                                                Finish
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="table-responsive">
@@ -99,6 +118,10 @@
                                                                     <div class="badge badge-warning">
                                                                         Pending
                                                                     </div>
+                                                                @elseif($order->status==1)
+                                                                <div class="badge badge-danger">
+                                                                        Processing
+                                                                    </div>
                                                                 @else
                                                                     <div class="badge badge-dark">
                                                                         Finish
@@ -127,5 +150,18 @@
                     </div>
                 </div>
                 <!-- End Main -->
+                <script>
+                    const btns = document.querySelectorAll('.btn-filter-status');
+                    btns.forEach((btn)=>{
+                        btn.addEventListener('click', ()=>{
+                            let status = btn.dataset.status;
+                            if(status == '*') {
+                                window.location = 'admin/order';
+                                return;
+                            }
+                            window.location = `admin/order/status/${status}`
+                        })
+                    })
+                </script>
 
 @endsection

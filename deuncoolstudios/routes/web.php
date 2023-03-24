@@ -106,6 +106,8 @@ Route::prefix('admin')->middleware('CheckAdminLogin')->group(function(){
     Route::resource('product/{product_id}/image', ProductImageController::class);
     Route::resource('product/{product_id}/detail', ProductDetailController::class);
     Route::resource('order', OrderController::class);
+    Route::get('order/print-order/{id}', [OrderController::class, 'print']);
+    Route::get('order/status/{status}', [OrderController::class, 'status']);
     Route::get('product/{product_id}/rating', [ProductRatingController::class, 'index']);
     Route::delete('product/{product_id}/rating/{product_rating_id}', [ProductRatingController::class, 'destroy']);
     Route::resource('blog', AdminBlogController::class);
@@ -114,5 +116,6 @@ Route::prefix('admin')->middleware('CheckAdminLogin')->group(function(){
         Route::post('/', [AdminHomeController::class, 'postLogin'])->withoutMiddleware('CheckAdminLogin');
     });
     Route::get('logout', [AdminHomeController::class, 'logout']);
+    Route::get('filter',[AdminHomeController::class,'filter']);
 });
 

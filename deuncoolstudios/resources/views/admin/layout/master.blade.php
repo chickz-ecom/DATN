@@ -513,6 +513,11 @@
                                 </a>
                                 <ul>
                                     <li>
+                                        <a href="./admin" class="{{(request()->segment(2) == '') ? 'mm-active' : ''}}">
+                                            <i class="metismenu-icon"></i>Dashboard
+                                        </a>
+                                    </li>
+                                    <li>
                                         <a href="./admin/user" class="{{(request()->segment(2) == 'user') ? 'mm-active' : ''}}">
                                             <i class="metismenu-icon"></i>User
                                         </a>
