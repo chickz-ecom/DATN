@@ -67,7 +67,7 @@
     <button type="button" class="btn btn-filter-thongke ml-3" style="background-color: #16aaff" >
         Lọc kết quả  
     </button>
-    <div class="container notification-filter bg-warning mt-2">
+    <div class="container notification-filter bg-warning mt-2 ml-3">
         <p class=" m-0"> 
         </p>
     </div>

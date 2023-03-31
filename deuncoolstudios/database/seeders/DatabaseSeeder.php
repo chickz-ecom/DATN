@@ -136,6 +136,9 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Áo khoác nỉ',
             ],
+            [
+                'name' => 'Quần',
+            ],
         ]);
 
         DB::table('products')->insert([
@@ -650,9 +653,241 @@ class DatabaseSeeder extends Seeder
                 'featured' => true,
                 'tag' => 'Clothing',
             ],
+            [
+                'id' => 13,
+                'brand_id' => 1,
+                'product_category_id' => 4,
+                'name' => 'Quần short leo núi vùng cao MH100 cho nam - Xám',
+                'description' => '
+                GIỚI TÍNH	NAM <br>
+                TẦN SUẤT	Thỉnh thoảng<br>
+                TRÌNH ĐỘ LUYỆN TẬP	Mới bắt đầu<br>
+                ĐIỀU KIỆN THỜI TIẾT	Thời tiết ôn hòa<br>
+                ĐỊA ĐIỂM LUYỆN TẬP	Núi<br>
+                THÔNG TIN CHỌN CỠ VÀ KIỂU MAY	Phom dáng thể thao giúp bạn cử động thoải mái.<br>
+                TÍNH NĂNG	2 túi để tay, 1 túi bên có khóa kéo, Dải thắt lưng bán đàn hồi. Vải co giãn trên mông và đùi giúp bạn cử động thoải mái. Hệ thống khuy bấm và đai luồn thắt lưng.<br>
+                KHÔ NHANH	Thời gian khô: đo khả năng khô nhanh của vải sau khi bị ướt theo quy chuẩn.<br>
+                BẢO HÀNH	2
+                ĐƯỢC KIỂM TRA BỞI	Đội ngũ thiết kế của chúng tôi làm việc tại chân núi Mont-Blanc, vùng Haute-Savoie (Pháp). Chúng tôi liên tục sáng tạo và phát triển các sản phẩm mẫu mã đẹp, đơn giản với công nghệ tiên tiến. Sau đó, sản phẩm được kiểm nghiệm triệt để trong điều kiện thực tế, bởi chúng tôi tin rằng cách duy nhất để không ngừng cải thiện sản phẩm là kiểm nghiệm dưới điều kiện sử dụng thực tế của người dùng.<br>
+                THÀNH PHẦN	Vải chính : 100.0% Polyamit Tấm đệm vai : 85.0% Polyamit, Tấm đệm vai : 15.0% Spandex Lớp lót : 100.0% Polyester (PES)<br>
+                
+                AVAILABLE NOW<br>',
+                'content' => 'Quần Jeans dáng Straight',
+                'price' => 245000,
+                'qty' => 20,
+                'discount' => null,
+                'weight' => 1.3,
+                'sku' => 213124,
+                'featured' => true,
+                'tag' => 'Clothing',
+            ],
+            [
+                'id' => 14,
+                'brand_id' => 1,
+                'product_category_id' => 4,
+                'name' => 'Quần dài Travel 100 cho nam - Xám',
+                'description'=>'GIỚI TÍNH:	NAM<br>
+                TẦN SUẤT:	Thỉnh thoảng<br>
+                KHOẢNG THỜI GIAN:	Khoảng thời gian ngắn<br>
+                GIẢM THIỂU TÁC ĐỘNG CỦA QUẦN DÀI ĐẾN MÔI TRƯỜNG:	Bông hữu cơ đã được trồng không sử dụng phân bón hóa học, thuốc trừ sâu và GMO, do đó làm giảm nguy cơ ô nhiễm đất và nước ngầm. Áp dụng những biện pháp thực hành môi trường tốt nhất, phương thức sản xuất này là cách để trồng bông tốt hơn. Chất liệu vải chính của quần chủ yếu là loại cotton này. Chỉ chất liệu vải của túi quần (tức là khoảng 3% sản phẩm) được làm từ cotton và polyester không tái chế<br>
+                TÁC ĐỘNG CỦA QUẦN DÀI ĐẾN MÔI TRƯỜNG NHƯ THẾ NÀO?	Chất liệu vải chính của quần chủ yếu là loại cotton hữu cơ này. Chỉ chất liệu vải của túi quần (tức là khoảng 3% sản phẩm) được làm từ cotton không tái chế và polyester thông thường. Bastien, kỹ sư về vải của chúng tôi đã tìm kiếm loại vải ít tác động đến môi trường. Để đạt được mục tiêu dùng 100% loại vải này cho quần dài trong năm tới!<br>
+                CHẤT LIỆU NÀY SẼ KHÔNG KHIẾN BẠN THẤT VỌNG!	Kiểu dệt “ripstop” hình carô của chất liệu mang lại đặc tính bền hơn so với chất liệu tương đương nhưng trơn nhẵn.<br>
+                THIẾT KẾ PHÙ HỢP MỌI VÓC DÁNG	Dải thắt lưng tháo rời để điều chỉnh quần dài theo vóc dáng cơ thể bạn. Bạn cũng có thể sử dụng thắt lưng trên quần dài và quần short khác vì chúng tôi đảm bảo thắt lưng có kích cỡ chuẩn.<br>
+                THIẾT KẾ NHIỀU TÚI ĐỂ ĐỰNG VẬT DỤNG CÁ NHÂN KHI ĐI DÃ NGOẠI	Quần có 8 túi: - 1 túi bên có khóa kéo. - 1 túi đựng thẻ nhỏ. - 2 túi sau có vạt túi đóng bằng khuy bấm. - 2 túi để tay không có khóa. - 2 túi hộp ở hai bên, đóng bằng khuy bấm.<br>
+                BẢO HÀNH:	2<br>
+                THÀNH PHẦN	Vải chính: 65.0% Cotton, 35.0% Polyethylen Terephtalat,Lớp lót: 100.0% Cotton,Túi: 35.0% Cotton, 65.0% Polyethylen Terephtalat<br>
+                
+                AVAILABLE NOW<br>',
+                'content' => 'Quần dài Travel 100 cho nam - Xám',
+                'price' => 800000,
+                'qty' => 20,
+                'discount' => null,
+                'weight' => 1.3,
+                'sku' => 213124,
+                'featured' => true,
+                'tag' => 'Clothing',
+            ],
+            [
+                'id' => 15,
+                'brand_id' => 1,
+                'product_category_id' => 4,
+                'name' => 'Quần dài dã ngoại MH100 cho nam - Xám',
+                'description'=>'
+                GIỚI TÍNH	NAM<br>
+                TẦN SUẤT	Thỉnh thoảng<br>
+                TRÌNH ĐỘ LUYỆN TẬP	Mới bắt đầu<br>
+                ĐỊA ĐIỂM TẬP LUYỆN	Ngoài trời<br>
+                PHOM DÁNG	Suông<br>
+                SỐ LƯỢNG TÚI	3 túi<br>
+                LOẠI ĐAI	Dây đai bán thun<br>
+                THIẾT KẾ THÔNG KHÍ	Không thông khí<br>
+                CHẤT LIỆU CHÍNH	Tổng hợp<br>
+                CHỐNG THẤM NƯỚC	Không chống thấm nước<br>
+                TÚI	Túi khóa kéo, Có túi<br>
+                ĐỘ DÀI	Dài<br>
+                LOẠI XÀ CẠP	No brushing boots<br>
+                CHỐNG GIÓ	Không chống gió<br>
+                MÙA SỬ DỤNG	Mùa hè<br>
+                CHIỀU CAO THẮT LƯNG	Lưng vừa<br>
+                BỌC GIÀY	Without shoes cover<br>
+                VỊ TRÍ GIA CỐ	Không gia cố<br>
+                THÁO RÁP ĐƯỢC	Not modular<br>
+                VỪA VẶN VÀ THOẢI MÁI	Dáng suông giúp vận động thoải mái. Dải thắt lưng bán co giãn kèm đai quần.<br>
+                THOÁT MỒ HÔI	Vải siêu nhẹ làm từ sợi tổng hợp giúp thấm hút mồ hôi nhanh chóng. Để đảm bảo điều này, chúng tôi đã tiến hành kiểm tra trong phòng thí nghiệm bằng một số bài kiểm tra tiêu chuẩn. Tất cả các sản phẩm quần dài hiking của chúng tôi đều đạt điểm 3/5<br>
+                KHÔ NHANH	Thời gian khô: đo khả năng khô nhanh của vải sau khi bị ướt theo quy chuẩn.<br>
+                THIẾT KẾ SẢN PHẨM:CHUYÊN MÔN CỦA CHÚNG TÔI	Trung tâm thiết kế toàn cầu Quechua có trụ sở tại Passy ở chân núi Mont Blanc, Haute Savoie. Đây là địa điểm gặp mặt của đội ngũ thiết kế của chúng tôi (nhà thiết kế, quản lý sản phẩm, kỹ sư, v.v.) và những người đam mê thể thao ngoài trời. Điều kiện tốt để thiết kế các sản phẩm leo núi và cống hiến tất cả chuyên môn của chúng tôi.<br>
+                CHÍNH SÁCH VÌ MÔI TRƯỜNG CỦA CHÚNG TÔI	Chúng tôi ý thức bảo vệ sân chơi tự nhiên của chúng ta, vì thế, Quechua cam kết hạn chế tác động đến môi trường từ sản phẩm của hãng. Hiện tại, sản phẩm chưa có thiết kế thân thiện với môi trường, nhưng chúng tôi nỗ lực mỗi ngày để cải tiến theo hướng thân thiện hơn: thiết kế thân thiện với môi trường, dễ sửa chữa và bền bỉ là ưu tiên phát triển của chúng tôi.<br>
+                XUẤT XỨ SẢN PHẨM	Quần được thiết kế tại trung tâm quốc tế của Decathlon dưới chân núi Mont Blanc ở Pháp, sau đó đưa tới sản xuất tại Việt Nam, Bangladesh và Ethiopia. Decathlon hợp tác sâu rộng với những đối tác có chuyên môn trong lĩnh vực sản xuất quần dài. Nhờ mối quan hệ tin cậy đó, chúng tôi có thể tạo ra các sản phẩm kỹ thuật chất lượng cao.<br>
+                ĐIỀU KIỆN LÀM VIỆC TẠI CÁC NHÀ MÁY SẢN XUẤT CỦA CHÚNG TÔI	Chúng tôi đảm bảo các nhà cung cấp tuân thủ bộ quy tắc ứng xử của chúng tôi. Chúng tôi thường lựa chọn nhà cung cấp tại các quốc gia đang phát triển, nơi mà sự hiện diện của chúng tôi sẽ giúp tạo thêm việc làm. Bằng cách tiến hành đánh giá và giám sát thực tế, chúng tôi đảm bảo môi trường làm việc của nhân viên đáp ứng các tiêu chuẩn chất lượng về tôn trọng con người, hoàn thiện cá nhân và bảo vệ môi trường.<br>
+                BẢO HÀNH	2<br>
+                ĐƯỢC KIỂM TRA BỞI	Để đáp ứng các yêu cầu của bạn, sản phẩm Quechua được kiểm nghiệm trên núi trong các điều kiện mà bạn sẽ gặp phải trong chuyến hiking. , Đội ngũ của chúng tôi cùng nhóm kiểm nghiệm viên (gồm đối tác, đại sứ và khách hàng) kiểm nghiệm sản phẩm trong suốt quá trình phát triển đến khi đưa ra thị trường.<br>
+                THÀNH PHẦN	Vải chính: 100.0% Polyethylen Terephtalat,Tấm đệm vai: 100.0% Polyethylen Terephtalat<br>
+                
+                
+                AVAILABLE NOW<br>',
+                'content' => 'Quần dài dã ngoại MH100 cho nam - Xám',
+                'price' => 425000,
+                'qty' => 20,
+                'discount' => null,
+                'weight' => 1.3,
+                'sku' => 213124,
+                'featured' => true,
+                'tag' => 'Clothing',
+            ],
+            [
+                'id' => 16,
+                'brand_id' => 1,
+                'product_category_id' => 4,
+                'name' => 'Quần short ngắn leo núi dã ngoại MH500 cho nam - Kaki',
+                'description'=>'
+                GIỚI TÍNH	NAM<br>
+                TẦN SUẤT	Thỉnh thoảng<br>
+                TRÌNH ĐỘ LUYỆN TẬP	Mới bắt đầu<br>
+                ĐỊA ĐIỂM TẬP LUYỆN	Ngoài trời<br>
+                PHOM DÁNG	Suông<br>
+                SỐ LƯỢNG TÚI	3 túi<br>
+                LOẠI ĐAI	Dây đai bán thun<br>
+                THIẾT KẾ THÔNG KHÍ	Không thông khí<br>
+                CHẤT LIỆU CHÍNH	Tổng hợp<br>
+                CHỐNG THẤM NƯỚC	Không chống thấm nước<br>
+                TÚI	Túi khóa kéo, Có túi<br>
+                ĐỘ DÀI	Dài<br>
+                LOẠI XÀ CẠP	No brushing boots<br>
+                CHỐNG GIÓ	Không chống gió<br>
+                MÙA SỬ DỤNG	Mùa hè<br>
+                CHIỀU CAO THẮT LƯNG	Lưng vừa<br>
+                BỌC GIÀY	Without shoes cover<br>
+                VỊ TRÍ GIA CỐ	Không gia cố<br>
+                THÁO RÁP ĐƯỢC	Not modular<br>
+                VỪA VẶN VÀ THOẢI MÁI	Dáng suông giúp vận động thoải mái. Dải thắt lưng bán co giãn kèm đai quần.<br>
+                THOÁT MỒ HÔI	Vải siêu nhẹ làm từ sợi tổng hợp giúp thấm hút mồ hôi nhanh chóng. Để đảm bảo điều này, chúng tôi đã tiến hành kiểm tra trong phòng thí nghiệm bằng một số bài kiểm tra tiêu chuẩn. Tất cả các sản phẩm quần dài hiking của chúng tôi đều đạt điểm 3/5<br>
+                KHÔ NHANH	Thời gian khô: đo khả năng khô nhanh của vải sau khi bị ướt theo quy chuẩn.<br>
+                THIẾT KẾ SẢN PHẨM:CHUYÊN MÔN CỦA CHÚNG TÔI	Trung tâm thiết kế toàn cầu Quechua có trụ sở tại Passy ở chân núi Mont Blanc, Haute Savoie. Đây là địa điểm gặp mặt của đội ngũ thiết kế của chúng tôi (nhà thiết kế, quản lý sản phẩm, kỹ sư, v.v.) và những người đam mê thể thao ngoài trời. Điều kiện tốt để thiết kế các sản phẩm leo núi và cống hiến tất cả chuyên môn của chúng tôi.<br>
+                CHÍNH SÁCH VÌ MÔI TRƯỜNG CỦA CHÚNG TÔI	Chúng tôi ý thức bảo vệ sân chơi tự nhiên của chúng ta, vì thế, Quechua cam kết hạn chế tác động đến môi trường từ sản phẩm của hãng. Hiện tại, sản phẩm chưa có thiết kế thân thiện với môi trường, nhưng chúng tôi nỗ lực mỗi ngày để cải tiến theo hướng thân thiện hơn: thiết kế thân thiện với môi trường, dễ sửa chữa và bền bỉ là ưu tiên phát triển của chúng tôi.<br>
+                XUẤT XỨ SẢN PHẨM	Quần được thiết kế tại trung tâm quốc tế của Decathlon dưới chân núi Mont Blanc ở Pháp, sau đó đưa tới sản xuất tại Việt Nam, Bangladesh và Ethiopia. Decathlon hợp tác sâu rộng với những đối tác có chuyên môn trong lĩnh vực sản xuất quần dài. Nhờ mối quan hệ tin cậy đó, chúng tôi có thể tạo ra các sản phẩm kỹ thuật chất lượng cao.<br>
+                ĐIỀU KIỆN LÀM VIỆC TẠI CÁC NHÀ MÁY SẢN XUẤT CỦA CHÚNG TÔI	Chúng tôi đảm bảo các nhà cung cấp tuân thủ bộ quy tắc ứng xử của chúng tôi. Chúng tôi thường lựa chọn nhà cung cấp tại các quốc gia đang phát triển, nơi mà sự hiện diện của chúng tôi sẽ giúp tạo thêm việc làm. Bằng cách tiến hành đánh giá và giám sát thực tế, chúng tôi đảm bảo môi trường làm việc của nhân viên đáp ứng các tiêu chuẩn chất lượng về tôn trọng con người, hoàn thiện cá nhân và bảo vệ môi trường.<br>
+                BẢO HÀNH	2<br>
+                ĐƯỢC KIỂM TRA BỞI	Để đáp ứng các yêu cầu của bạn, sản phẩm Quechua được kiểm nghiệm trên núi trong các điều kiện mà bạn sẽ gặp phải trong chuyến hiking. , Đội ngũ của chúng tôi cùng nhóm kiểm nghiệm viên (gồm đối tác, đại sứ và khách hàng) kiểm nghiệm sản phẩm trong suốt quá trình phát triển đến khi đưa ra thị trường.<br>
+                THÀNH PHẦN	Vải chính: 100.0% Polyethylen Terephtalat,Tấm đệm vai: 100.0% Polyethylen Terephtalat<br>
+                
+                
+                AVAILABLE NOW<br>',
+                'content' => 'Quần short ngắn leo núi dã ngoại MH500 cho nam - Kaki',
+                'price' => 495000,
+                'qty' => 20,
+                'discount' => null,
+                'weight' => 1.3,
+                'sku' => 213124,
+                'featured' => true,
+                'tag' => 'Clothing',
+            ],
+            [
+                'id' => 17,
+                'brand_id' => 1,
+                'product_category_id' => 4,
+                'name' => 'Quần legging trekking dày dặn Travel 500 cho nữ - Đen',
+                'description'=>'
+                
+                GIỚI TÍNH	NỮ <br>
+                TẦN SUẤT	Thường xuyên<br>
+                ĐIỀU KIỆN THỜI TIẾT	Thời tiết ấm, Thời tiết ôn hòa, Thời tiết mát<br>
+                PHOM DÁNG	Skinny<br>
+                SỐ LƯỢNG TÚI	5 TÚI<br>
+                HAI MẶT	Không mặc hai mặt<br>
+                LOẠI ĐAI	Dây đai thun<br>
+                CHẤT LIỆU CHÍNH	Polyester<br>
+                CHỐNG THẤM NƯỚC	Không chống thấm nước<br>
+                CÁC LỰA CHỌN	Có vùng giảm chấn, Thắt lưng co giãn<br>
+                TÚI	Túi khóa kéo, Có túi, Túi đóng<br>
+                PHONG CÁCH	Trơn<br>
+                ĐỘ DÀI	Dài<br>
+                CHỐNG GIÓ	Không chống gió<br>
+                CHIỀU CAO THẮT LƯNG	Lưng vừa<br>
+                VỊ TRÍ GIA CỐ	Gia cố ở mông, Gia cố ở đầu gối<br>
+                ĐANG MANG THAI	Không phù hợp cho thai kỳ<br>
+                TẠI SAO NÊN CÓ MỘT CHIẾC QUẦN LEGGING KHI ĐI DU LỊCH?	Chúng tôi đã dành thời gian đi thực tế cùng đội ngũ thiết kế (nhà thiết kế, giám đốc sản phẩm và kỹ sư) để tìm hiểu những yêu cầu khi đi bộ dã ngoại. Chúng tôi thấy rằng nhiều người mặc quần legging trong mọi hoạt động nhờ độ thoải mái của quần! Chúng tôi đã quyết định cho ra mắt một phiên bản quần legging được thiết kế để sử dụng ngoài trời và đi du lịch.<br>
+                QUẦN LEGGING TRAVEL 500	Chúng tôi đã quyết định cho ra mắt một phiên bản quần legging được thiết kế để sử dụng ngoài trời và đi du lịch.Việc này yêu cầu phải duy trì các đặc tính co giãn thoải mái của quần legging thông thường và thêm vải đệm bền chắc ở mông và đầu gối. Nhờ đó, chúng tôi đã có được chiếc quần legging chính hiệu được thiết kế dành cho đi du lịch ngoài trời. Phù hợp để đi bộ trên núi, đi dã ngoại trên vùng núi đá, v.v. mà cần lo lắng về việc bị thủng lỗ!<br>
+                CHỨNG NHẬN TRONG THỰC TẾ	Chúng tôi đã kiểm nghiệm quần legging trong quá trình phát triển để đảm bảo đáp ứng yêu cầu của người đi du lịch dã ngoại. Những người kiểm nghiệm của chúng tôi đã kiểm tra tất cả các tính năng của sản phẩm trong một tuần tại Quần đảo Canary. Kích cỡ và vị trí của túi, phom dáng và các đường may: họ đánh giá và chứng nhận mọi thứ!<br>
+                SỰ AN TOÀN CỦA VẬT DỤNG LÀ TỐI QUAN TRỌNG!	Khi đi bộ dã ngoại, còn gì tệ hơn khi làm mất hộ chiếu hoặc thẻ ngân hàng?Để hạn chế rủi ro này và giúp bạn yên tâm trong quá trình du lịch, chúng tôi đã thiết kế một túi ẩn trên dải thắt lưng của quần legging.<br>
+                BẢO HÀNH	2<br>
+                ĐƯỢC KIỂM TRA BỞI	Laurie - Annecy (74): "Cuối cùng cũng có quần legging để đi trekking! Tôi đã kiểm nghiệm sản phẩm trong 1 tuần cùng cả nhóm thiết kế tại Canaries vào tháng 2 năm. Tôi đặc biệt thích sự kết hợp của hai chất liệu thoải mái và chắc chắn cho việc đi dã ngoại."<br>
+                THÀNH PHẦN	Vải chính: 11.0% Spandex, 89.0% Polyethylen Terephtalat,Tấm đệm vai: 12.0% Spandex, 88.0% Polyamit<br>
+
+                
+                
+                AVAILABLE NOW<br>',
+                'content' => 'Quần legging trekking dày dặn Travel 500 cho nữ - Đen',
+                'price' => 795000,
+                'qty' => 20,
+                'discount' => null,
+                'weight' => 1.3,
+                'sku' => 213124,
+                'featured' => true,
+                'tag' => 'Clothing',
+            ],
         ]);
 
         DB::table('product_images')->insert([
+            [
+                'product_id'=> 15,
+                'path'=>'product-15.png'
+            ],
+            [
+                'product_id'=> 15,
+                'path'=>'product-15-1.png'
+            ],
+            [
+                'product_id'=> 16,
+                'path'=>'product-16.png'
+            ],
+            [
+                'product_id'=> 16,
+                'path'=>'product-16-1.png'
+            ],
+            [
+                'product_id'=> 17,
+                'path'=>'product-17.png'
+            ],
+            [
+                'product_id'=> 17,
+                'path'=>'product-17-1.png'
+            ],
+            [
+                'product_id'=> 14,
+                'path'=>'product-14.png'
+            ],
+            [
+                'product_id'=> 14,
+                'path'=>'product-14-1.png'
+            ],
+            [
+                'product_id'=> 13,
+                'path'=>'product-13.png'
+            ],
+            [
+                'product_id'=> 13,
+                'path'=>'product-13-1.png'
+            ],
             [
                 'product_id' => 1,
                 'path' => 'product-1.jpeg',
@@ -1001,6 +1236,105 @@ class DatabaseSeeder extends Seeder
                 'size' => 'XL',
                 'qty' => 5,
             ],
+            [
+                'product_id' => 13,
+                'size' => 'S',
+                'qty' => 5,
+            ],
+            [
+                'product_id' => 13,
+                'size' => 'M',
+                'qty' => 5,
+            ],
+            [
+                'product_id' => 13,
+                'size' => 'L',
+                'qty' => 5,
+            ],
+            [
+                'product_id' => 13,
+                'size' => 'XL',
+                'qty' => 5,
+            ],[
+                'product_id' => 15,
+                'size' => 'S',
+                'qty' => 5,
+            ],
+            [
+                'product_id' => 15,
+                'size' => 'M',
+                'qty' => 5,
+            ],
+            [
+                'product_id' => 15,
+                'size' => 'L',
+                'qty' => 5,
+            ],
+            [
+                'product_id' => 15,
+                'size' => 'XL',
+                'qty' => 5,
+            ],[
+                'product_id' => 17,
+                'size' => 'S',
+                'qty' => 5,
+            ],
+            [
+                'product_id' => 17,
+                'size' => 'M',
+                'qty' => 5,
+            ],
+            [
+                'product_id' => 17,
+                'size' => 'L',
+                'qty' => 5,
+            ],
+            [
+                'product_id' => 17,
+                'size' => 'XL',
+                'qty' => 5,
+            ],
+            [
+                'product_id' => 16,
+                'size' => 'S',
+                'qty' => 5,
+            ],
+            [
+                'product_id' => 16,
+                'size' => 'M',
+                'qty' => 5,
+            ],
+            [
+                'product_id' => 16,
+                'size' => 'L',
+                'qty' => 5,
+            ],
+            [
+                'product_id' => 16,
+                'size' => 'XL',
+                'qty' => 5,
+            ],
+            [
+                'product_id' => 14,
+                'size' => 'S',
+                'qty' => 5,
+            ],
+            [
+                'product_id' => 14,
+                'size' => 'M',
+                'qty' => 5,
+            ],
+            [
+                'product_id' => 14,
+                'size' => 'L',
+                'qty' => 5,
+            ],
+            [
+                'product_id' => 14,
+                'size' => 'XL',
+                'qty' => 5,
+            ],
+            
             [
                 'product_id' => 2,
                 'size' => 'S',
