@@ -54,7 +54,6 @@
                                 <div class="pd-title">
                                     <span>{{ $product->tag }}</span>
                                     <h3>{{ $product->name }}</h3>
-                                    <a href="#" class="heart-icon"><i class="icon_heart_alt"></i></a>
                                 </div>
                                 <div class="pd-rating">
                                     @for ($i = 1; $i <=5 ; $i++)
@@ -96,7 +95,7 @@
                                         <div class="pro-qty">
                                             <input type="number" name="qty" id="" value="1">
                                         </div>
-                                        @if ($product->qty<0)
+                                        @if ($product->qty<=0)
                                             <div class="primary-btn pd-cart add-to-cart" style="background-color: #8b8888">ADD TO CART</div>
                                         @else
                                             <button type="submit" class="primary-btn pd-cart add-to-cart">ADD TO CART</button>

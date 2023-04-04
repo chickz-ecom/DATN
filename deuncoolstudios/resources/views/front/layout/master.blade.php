@@ -59,7 +59,7 @@
                         {{ Auth::user()->first_name }}
                         <ul class="dropdown1">
                             <li><a href="./account/manage">Quản lý tài khoản</a></li>
-                            <li><a href="./account/changPassword">Đổi mật khẩu</a></li>
+                            <li><a href="./account/changePassword">Đổi mật khẩu</a></li>
                             <li><a href="./account/logout">Đăng xuất</a></li>
                         </ul>
                     </div>
@@ -126,7 +126,7 @@
                                                             </td>
                                                             <td class="si-text">
                                                                 <div class="product-selected">
-                                                                    <p>{{ number_format($cart->price) }} x {{ $cart->qty }}đ</p>
+                                                                    <p>{{ number_format($cart->price) }}đ x {{ $cart->qty }}</p>
                                                                     <h6>{{ $cart->name }}</h6>
                                                                 </div>
                                                             </td>
@@ -159,7 +159,7 @@
                                     <div class="select-total">
                                         <span>total:</span>
                                         @if (auth()->user())
-                                            <h5>{{$total}}đ</h5>
+                                            <h5>{{number_format($total)}}đ</h5>
                                         @else
                                             <h5>{{ Cart::total() }}đ</h5>
                                         @endif

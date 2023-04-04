@@ -5,8 +5,8 @@
                 <div class="app-main__inner">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="main-card mb-3 card">
-                                <div class="card-body">
+                            <div class="main-card my-3 container card">
+                                <div class="card-body col-6" style="margin: 0 auto;">
                                     @if ($errors->any())
                                         <div class="alert alert-danger">
                                             <ul class="p-0 m-0">

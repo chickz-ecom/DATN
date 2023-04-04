@@ -48,6 +48,7 @@ class UserController extends Controller
         //
         $data = $request->all();
         $data['password'] = Hash::make($data['password']);
+        $data['token'] = '123';
         if($request->hasFile('image')){
             $service = App::make('App\Utilities\Common');
             $data['avatar'] = $service->uploadFile($request->file('image'),'front/img/user');

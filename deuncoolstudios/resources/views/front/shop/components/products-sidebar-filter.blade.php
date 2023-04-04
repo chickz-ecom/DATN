@@ -43,7 +43,7 @@
                 </div>
             </div>
             <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content" 
-                data-min="50000" data-max="400000" 
+                data-min="50000" data-max="1000000" 
                 data-min-value="{{ str_replace('đ','',request("price_min")) }}" 
                 data-max-value="{{ str_replace('đ','',request("price_max")) }}">
                 <div class="ui-slider-range ui-corner-all ui-widget-header">

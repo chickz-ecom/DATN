@@ -77,7 +77,7 @@
                                         {{ $orderDetail->product->name . ' (x' . $orderDetail->qty . ')'}}
                                     </td>
                                     <td style="border-top: 1px solid #dee2e6; padding: 5px 20px 5px 0; text-align: right;">
-                                        {{ $orderDetail->total }} $
+                                        {{ number_format($orderDetail->total) }} VND
                                     </td>
                                 </tr>
                             @endforeach
@@ -107,13 +107,13 @@
                                 <tr>
                                     <td class="">Subtotal</td>
                                     <td class="pr-3 text-right" style="text-align: right; padding-right: 20px;">
-                                        {{ $subtotal }} VND
+                                        {{ number_format($subtotal) }} VND
                                     </td>
                                 </tr>
                                 <tr style="font-size: 18px;">
                                     <td><b>TOTAL</b></td>
                                     <td class="pr-3 text-right" style="text-align: right; padding-right: 20px;">
-                                        <b>{{ $total }} VND</b>
+                                        <b>{{ number_format($total) }} VND</b>
                                     </td>
                                 </tr>
                             </table>

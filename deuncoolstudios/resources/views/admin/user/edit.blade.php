@@ -96,7 +96,14 @@
                                                     class="form-control" value="">
                                             </div>
                                         </div>
-
+                                        <div class="position-relative row form-group">
+                                            <label for="country"
+                                                class="col-md-3 text-md-center col-form-label">Status</label>
+                                            <div class="col-md-9 col-xl-8">
+                                                <input name="status" id="status" placeholder="Status"
+                                                    type="number" class="form-control" value="{{$user->status}}">
+                                            </div>
+                                        </div>
                                         <div class="position-relative row form-group">
                                             <label for="country"
                                                 class="col-md-3 text-md-center col-form-label">Country</label>
